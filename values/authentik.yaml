@@ -36,7 +36,7 @@ postgresql:
     image:
         registry: docker.io
         repository: bitnami/postgresql
-        tag: 15.7.0-debian-12-r14
+        tag: 16.3.0-debian-12-r19
 redis:
     enabled: true
     image:
