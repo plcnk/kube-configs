@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  sources:
+    # Chart from chart repo
+    - repoURL: https://argoproj.github.io/argo-helm
+      chart: argo-cd
+      targetRevision: 7.3.6
+      helm:
+        valueFiles:
+          - $values/values/argocd.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/k8s_conf
+      targetRevision: HEAD
+      ref: values
+  project: argocd

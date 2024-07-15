@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: unifi-controller
+  namespace: argocd
+spec:
+  destination:
+    namespace: unifi
+    server: https://kubernetes.default.svc
+  sources:
+    # Chart from chart repo
+    - repoURL: https://qonstrukt.github.io/helm-charts
+      chart: unifi-controller
+      targetRevision: 2.6.1
+      helm:
+        valueFiles:
+          - $values/values/unifi.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/k8s_conf
+      targetRevision: HEAD
+      ref: values
+  project: unifi

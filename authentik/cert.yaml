@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: authentik-cert
+  namespace: authentik
+spec:
+  commonName: auth.lab.intra
+  dnsNames:
+  - auth.lab.intra
+  issuerRef:
+    kind: ClusterIssuer
+    name: rpllabs-issuer
+  secretName: authentik-tls
+  subject:
+    countries:
+    - FR
+    localities:
+    - Toulouse
+    organizations:
+    - RPL Labs SAS
+    provinces:
+    - Haute-Garonne

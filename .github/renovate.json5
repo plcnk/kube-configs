@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>plcnk/.github:default.json5"
+  ],
+
+  "argocd": {
+    "fileMatch": ["argocd-apps/.*\\.yaml"]
+  },
+  "kubernetes": {
+    "fileMatch": [".*\\.yaml"],
+    "ignorePaths": ["argocd-apps", "values"]
+  },
+  "helm-values": {
+    "fileMatch": ["values/.*\\.yaml"]
+  }
+}
