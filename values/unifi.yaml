@@ -1,7 +1,7 @@
 image:
   repository: linuxserver/unifi-controller
   pullPolicy: IfNotPresent
-  tag: 
+  tag: 8.0.24
 
 replicaCount: 1
 
