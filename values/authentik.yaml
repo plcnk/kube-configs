@@ -32,6 +32,9 @@ server:
 postgresql:
     enabled: true
     auth:
+        # Password for the "postgres" admin user
+        postgresPassword: "n8Vx7VJpbwuoCD2RojqarLOvtc3Z0K"
+        # Password for the database user. Default username "authentik"
         password: "w3EsGc6bgvJC8dNfDZ9Co2vEmT4xWh"
     image:
         registry: docker.io
