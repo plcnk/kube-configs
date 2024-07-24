@@ -2,7 +2,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: alertmanager-cert
-  namespace: monitoring
 spec:
   commonName: alertmanager.lab.intra
   dnsNames:

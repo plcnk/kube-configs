@@ -36,4 +36,3 @@ data:
 kind: ConfigMap
 metadata:
   name: rpl-ca
-  namespace: monitoring
