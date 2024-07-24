@@ -1,16 +1,15 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: authentik-cert
-  namespace: authentik
+  name: unifi-cert
 spec:
-  commonName: auth.lab.intra
+  commonName: unifi.lab.intra
   dnsNames:
-  - auth.lab.intra
+  - unifi.lab.intra
   issuerRef:
     kind: ClusterIssuer
     name: rpllabs-issuer
-  secretName: authentik-tls
+  secretName: unifi-tls
   subject:
     countries:
     - FR

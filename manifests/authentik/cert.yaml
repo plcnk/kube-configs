@@ -1,16 +1,15 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: argocd-cert
-  namespace: argocd
+  name: authentik-cert
 spec:
-  commonName: argocd.lab.intra
+  commonName: auth.lab.intra
   dnsNames:
-  - argocd.lab.intra
+  - auth.lab.intra
   issuerRef:
     kind: ClusterIssuer
     name: rpllabs-issuer
-  secretName: argocd-server-tls
+  secretName: authentik-tls
   subject:
     countries:
     - FR
