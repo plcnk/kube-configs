@@ -1,16 +1,15 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: grafana-cert
-  namespace: monitoring
+  name: authentik-cert
 spec:
-  commonName: grafana.lab.intra
+  commonName: auth.lab.intra
   dnsNames:
-  - grafana.lab.intra
+  - auth.lab.intra
   issuerRef:
     kind: ClusterIssuer
     name: rpllabs-issuer
-  secretName: grafana-tls
+  secretName: authentik-tls
   subject:
     countries:
     - FR
