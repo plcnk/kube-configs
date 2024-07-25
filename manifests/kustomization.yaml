@@ -7,4 +7,5 @@ resources:
   - ./cert-manager
   - ./misc
   - ./prometheus-stack
+  - ./rancher
   - ./unifi

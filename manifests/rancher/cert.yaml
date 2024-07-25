@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: rancher-cert
+spec:
+  commonName: rancher.lab.intra
+  dnsNames:
+  - rancher.lab.intra
+  issuerRef:
+    kind: ClusterIssuer
+    name: rpllabs-issuer
+  secretName: tls-rancher-ingress
+  subject:
+    countries:
+    - FR
+    localities:
+    - Toulouse
+    organizations:
+    - RPL Labs SAS
+    provinces:
+    - Haute-Garonne

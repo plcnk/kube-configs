@@ -8,4 +8,5 @@ resources:
   - ./cert-manager
   - ./ingress-nginx
   - ./monitoring
+  - ./rancher
   - ./unifi
