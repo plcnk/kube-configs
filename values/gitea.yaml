@@ -428,6 +428,7 @@ gitea:
       OFFLINE_MODE: false
       LANDING_PAGE: login
     repository:
+      DEFAULT_BRANCH: master
       FORCE_PRIVATE: true
       DEFAULT_PRIVATE: private
       DEFAULT_PUSH_CREATE_PRIVATE: true
