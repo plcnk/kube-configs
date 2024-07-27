@@ -426,6 +426,7 @@ gitea:
       SSH_PORT: 22 # rootful image
       SSH_LISTEN_PORT: 2222 # rootless image
       OFFLINE_MODE: false
+      LANDING_PAGE: login
     repository:
       FORCE_PRIVATE: true
       DEFAULT_PRIVATE: private
