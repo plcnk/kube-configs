@@ -6,6 +6,7 @@ resources:
   - ./argocd
   - ./authentik
   - ./cert-manager
+  - ./gitea
   - ./ingress-nginx
   - ./monitoring
   - ./rancher
