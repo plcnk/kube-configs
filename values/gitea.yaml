@@ -546,18 +546,7 @@ redis:
 ## @param postgresql-ha.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
 ## @param postgresql-ha.primary.persistence.size PVC Storage Request for PostgreSQL HA volume
 postgresql-ha:
-  global:
-    postgresql:
-      database: gitea
-      password: gitea
-      username: gitea
   enabled: false
-  postgresql:
-    repmgrPassword: changeme2
-    postgresPassword: changeme1
-    password: changeme4
-  pgpool:
-    adminPassword: changeme3
 
 ## @section PostgreSQL
 #
@@ -572,8 +561,9 @@ postgresql:
   global:
     postgresql:
       auth:
-        password: gitea
-        database: oqwuntoDzr3c7XShRHa8L04EbrdsBT
+        postgresPassword: IMYjvPJhefH3BZ183vN0c2geClruv7
+        password: oqwuntoDzr3c7XShRHa8L04EbrdsBT
+        database: gitea
         username: gitea
       service:
         ports:
