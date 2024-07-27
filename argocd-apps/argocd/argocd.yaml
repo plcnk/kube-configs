@@ -16,7 +16,7 @@ spec:
         valueFiles:
           - $values/values/argocd.yaml
     # Values from git
-    - repoURL: https://github.com/plcnk/k8s_conf
+    - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
   project: argocd
