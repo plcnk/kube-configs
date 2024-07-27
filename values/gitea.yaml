@@ -410,7 +410,12 @@ gitea:
     oauth2_client:
       ENABLE_AUTO_REGISTRATION: true
     service:
+      explore:
+        REQUIRE_SIGNIN_VIEW: true
       DISABLE_REGISTRATION: true
+      DEFAULT_USER_VISIBILITY: limited
+      ALLOWED_USER_VISIBILITY_MODES: limited,private
+      DEFAULT_ORG_VISIBILITY: limited
     ui:
       DEFAULT_THEME: gitea-dark
     i18n:
@@ -420,6 +425,10 @@ gitea:
       SSH_PORT: 22 # rootful image
       SSH_LISTEN_PORT: 2222 # rootless image
       OFFLINE_MODE: false
+    repository:
+      FORCE_PRIVATE: true
+      DEFAULT_PRIVATE: private
+      DEFAULT_PUSH_CREATE_PRIVATE: true
   #
   #  security:
   #    PASSWORD_COMPLEXITY: spec
