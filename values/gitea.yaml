@@ -547,6 +547,10 @@ redis:
 ## @param postgresql-ha.primary.persistence.size PVC Storage Request for PostgreSQL HA volume
 postgresql-ha:
   enabled: false
+  postgresql:
+    repmgrPassword: changeme2
+    postgresPassword: changeme1
+    password: changeme4
 
 ## @section PostgreSQL
 #
