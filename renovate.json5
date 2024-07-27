@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>plcnk/.github:default.json5"
+    "github>plcnk/.github:default.json5",
+    ":semanticCommitTypeAll(chore)"
   ],
 
   "argocd": {
