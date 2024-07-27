@@ -1,3 +1,4 @@
+---
 image:
   repository: linuxserver/unifi-controller
   pullPolicy: IfNotPresent
@@ -52,8 +53,8 @@ ingress:
 # if set, use this persistant volume claim for the internal mongodb
 persistence:
   enabled: true
-  accessMode: ReadWriteOnce 
-  size: 8Gi 
+  accessMode: ReadWriteOnce
+  size: 8Gi
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -61,14 +62,13 @@ persistence:
   annotations: {}
   backup:
     enabled: true
-    accessMode: ReadWriteOnce 
-    size: 8Gi 
+    accessMode: ReadWriteOnce
+    size: 8Gi
     ## database data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
     storageClass: local-path-retain
     annotations: {}
-
 
 
 podSecurityContext: {}
@@ -83,7 +83,7 @@ securityContext: {}
 #  runAsNonRoot: true
 #  runAsUser: 999
 
-resources: 
+resources:
   limits:
     cpu: 500m
     memory: 2Gi
@@ -93,7 +93,7 @@ resources:
 
 
 nodeSelector: {}
-  #unifi-controller/enabled: "true"          
+  #unifi-controller/enabled: "true"
 
 tolerations: []
 
