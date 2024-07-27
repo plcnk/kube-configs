@@ -556,6 +556,8 @@ postgresql-ha:
     repmgrPassword: changeme2
     postgresPassword: changeme1
     password: changeme4
+  pgpool:
+    adminPassword: changeme3
 
 ## @section PostgreSQL
 #
