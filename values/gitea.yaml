@@ -410,6 +410,7 @@ gitea:
     oauth2_client:
       ENABLE_AUTO_REGISTRATION: true
     service:
+      REQUIRE_SIGNIN_VIEW: true
       explore:
         REQUIRE_SIGNIN_VIEW: true
       DISABLE_REGISTRATION: true
