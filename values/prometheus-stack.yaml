@@ -1,3 +1,4 @@
+---
 # Default values for kube-prometheus-stack.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
@@ -1046,7 +1047,7 @@ grafana:
     # GF_AUTH_GENERIC_OAUTH_TOKEN_URL: "http://authentik-server.authentik.svc.cluster.local/application/o/token/"
     # GF_AUTH_GENERIC_OAUTH_API_URL: "http://authentik-server.authentik.svc.cluster.local/application/o/userinfo/"
 
-  
+
   grafana.ini:
     auth:
       signout_redirect_url: "https://auth.lab.intra/application/o/grafana/end-session/"
