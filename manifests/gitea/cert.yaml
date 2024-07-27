@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: gitea-cert
+spec:
+  commonName: git.lab.intra
+  dnsNames:
+  - git.lab.intra
+  issuerRef:
+    kind: ClusterIssuer
+    name: rpllabs-issuer
+  secretName: gitea-tls
+  subject:
+    countries:
+    - FR
+    localities:
+    - Toulouse
+    organizations:
+    - RPL Labs SAS
+    provinces:
+    - Haute-Garonne
