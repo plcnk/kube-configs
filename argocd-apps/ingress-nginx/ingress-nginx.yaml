@@ -8,7 +8,15 @@ spec:
     namespace: ingress-nginx
     server: https://kubernetes.default.svc
   project: ingress-nginx
-  source:
-    chart: ingress-nginx
-    repoURL: https://kubernetes.github.io/ingress-nginx
-    targetRevision: 4.11.1
+  sources:
+    # Chart from chart repo
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      targetRevision: 4.11.1
+      helm:
+        valueFiles:
+          - $values/values/ingress-nginx.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/kube-configs
+      targetRevision: HEAD
+      ref: values
