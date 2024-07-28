@@ -9,5 +9,4 @@ resources:
   - ./misc
   - ./prometheus-stack
   - ./rancher
-  - ./test
   - ./unifi
