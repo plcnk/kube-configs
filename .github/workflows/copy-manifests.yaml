@@ -16,8 +16,6 @@ jobs:
     container: pandoc/latex
     steps:
       - uses: actions/checkout@v4
-      - name: creates output
-        run:  sh ./build.sh
       - name: Copy Manifests to Flux Repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
