@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: uptime-kuma-cert
+spec:
+  commonName: status.lab.intra
+  dnsNames:
+    - status.lab.intra
+  issuerRef:
+    kind: ClusterIssuer
+    name: rpllabs-issuer
+  secretName: uptime-kuma-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - RPL Labs SAS
+    provinces:
+      - Haute-Garonne

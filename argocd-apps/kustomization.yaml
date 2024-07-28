@@ -11,3 +11,4 @@ resources:
   - ./monitoring
   - ./rancher
   - ./unifi
+  - ./uptime-kuma
