@@ -25,7 +25,7 @@ jobs:
           destination-github-username: 'plcnk'
           destination-repository-name: 'flux-system'
           target-directory: 'k3s/manifests'
-          commit-email: 'romain.pluciennik@gmail.com'
+          user-email: 'romain.pluciennik@gmail.com'
           target-branch: master
 
       - name: Copy Argo CD manifests to Flux Repo
