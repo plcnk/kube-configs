@@ -22,7 +22,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'manifests'
-          destination-username: 'plcnk'
+          destination-github-username: 'plcnk'
           destination-repository-name: 'flux-system'
           target-directory: 'k3s/manifests'
           commit-email: 'romain.pluciennik@gmail.com'
@@ -34,7 +34,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'argocd-apps'
-          destination-username: 'plcnk'
+          destination-github-username: 'plcnk'
           destination-repository-name: 'flux-system'
           target-directory: 'k3s/argocd-apps'
           user-email: 'romain.pluciennik@gmail.com'
