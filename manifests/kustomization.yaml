@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ./argocd
   - ./authentik
+  - ./capacitor
   - ./cert-manager
   - ./gitea
   - ./misc
