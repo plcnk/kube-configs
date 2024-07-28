@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: authentik
 resources:
   - cert.yaml
+  - ingress.yaml
