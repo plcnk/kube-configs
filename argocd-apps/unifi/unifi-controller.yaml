@@ -17,6 +17,7 @@ spec:
           - $values/values/unifi.yaml
     # Values from git
     # This is a test comment (to remove)
+    # Another test comment
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values

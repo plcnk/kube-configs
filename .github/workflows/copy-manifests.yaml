@@ -13,25 +13,31 @@ jobs:
   build:
     name: Copy Manifests to Flux Repo
     runs-on: ubuntu-latest
+    container: pandoc/latex
     steps:
+      - uses: actions/checkout@v4
+      - name: creates output
+        run:  sh ./build.sh
       - name: Copy Manifests to Flux Repo
-        uses: nkoppel/push-files-to-another-repository@v1.1.3
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: 'manifests/'
+          source-directory: 'manifests'
           destination-username: 'plcnk'
-          destination-repository: 'flux-system'
-          destination-directory: 'k3s/'
+          destination-repository-name: 'flux-system'
+          target-directory: 'k3s/manifests'
           commit-email: 'romain.pluciennik@gmail.com'
+          target-branch: master
 
       - name: Copy Argo CD manifests to Flux Repo
-        uses: nkoppel/push-files-to-another-repository@v1.1.3
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: 'manifests/'
+          source-directory: 'argocd-apps'
           destination-username: 'plcnk'
-          destination-repository: 'flux-system'
-          destination-directory: 'k3s/'
-          commit-email: 'romain.pluciennik@gmail.com'
+          destination-repository-name: 'flux-system'
+          target-directory: 'k3s/argocd-apps'
+          user-email: 'romain.pluciennik@gmail.com'
+          target-branch: master
