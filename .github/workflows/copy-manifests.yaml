@@ -2,6 +2,7 @@
 name: Copy Manifests to Flux Repo
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
