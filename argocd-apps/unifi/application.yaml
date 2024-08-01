@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: uptime-kuma
+  name: unifi-controller
 spec:
   destination:
-    namespace: monitoring
+    namespace: unifi
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://dirsigler.github.io/uptime-kuma-helm
-      chart: uptime-kuma
-      targetRevision: 2.19.3
+    - repoURL: https://qonstrukt.github.io/helm-charts
+      chart: unifi-controller
+      targetRevision: 2.6.1
       helm:
         valueFiles:
-          - $values/values/uptime-kuma.yaml
+          - $values/values/unifi.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
-  project: monitoring
+  project: default

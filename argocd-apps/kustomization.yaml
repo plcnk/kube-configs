@@ -8,7 +8,7 @@ resources:
   - ./cert-manager
   - ./gitea
   - ./ingress-nginx
-  - ./monitoring
+  - ./prometheus-stack
   - ./rancher
   - ./sealed-secrets
   - ./unifi

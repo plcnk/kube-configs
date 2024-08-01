@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: uptime-kuma
 spec:
   destination:
-    namespace: argocd
+    namespace: monitoring
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://argoproj.github.io/argo-helm
-      chart: argo-cd
-      targetRevision: 7.3.11
+    - repoURL: https://dirsigler.github.io/uptime-kuma-helm
+      chart: uptime-kuma
+      targetRevision: 2.19.3
       helm:
         valueFiles:
-          - $values/values/argocd.yaml
+          - $values/values/uptime-kuma.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
-  project: argocd
+  project: default

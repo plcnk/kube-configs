@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rancher
+  name: argocd
 spec:
   destination:
-    namespace: cattle-system
+    namespace: argocd
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://releases.rancher.com/server-charts/latest
-      chart: rancher
-      targetRevision: 2.9.0
+    - repoURL: https://argoproj.github.io/argo-helm
+      chart: argo-cd
+      targetRevision: 7.3.11
       helm:
         valueFiles:
-          - $values/values/rancher.yaml
+          - $values/values/argocd.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
-  project: rancher
+  project: default

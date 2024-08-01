@@ -2,21 +2,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: unifi-controller
+  name: rancher
 spec:
   destination:
-    namespace: unifi
+    namespace: cattle-system
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://qonstrukt.github.io/helm-charts
-      chart: unifi-controller
-      targetRevision: 2.6.1
+    - repoURL: https://releases.rancher.com/server-charts/latest
+      chart: rancher
+      targetRevision: 2.9.0
       helm:
         valueFiles:
-          - $values/values/unifi.yaml
+          - $values/values/rancher.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
-  project: unifi
+  project: default
