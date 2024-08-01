@@ -19,4 +19,4 @@ spec:
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD
       ref: values
-  project: gitea
+  project: default
