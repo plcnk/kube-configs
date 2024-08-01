@@ -10,5 +10,6 @@ resources:
   - ./ingress-nginx
   - ./monitoring
   - ./rancher
+  - ./sealed-secrets
   - ./unifi
   - ./uptime-kuma
