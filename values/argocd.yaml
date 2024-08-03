@@ -200,7 +200,7 @@ configs:
       connectors:
         - config:
             issuer: https://auth.plcnk.home/application/o/argocd/
-            clientID: 8TTDD1TK5NcFXRa2BnVWNxKrxkNXWOevfskhFSSS
+            clientID: 0OS209f7aKsLCi8LwATmvAEiFOkZtH7SFyF66O2C
             clientSecret: $dex.authentik.clientSecret
             insecureEnableGroups: true
             scopes:
