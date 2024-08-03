@@ -7,7 +7,6 @@ resources:
   - ./cert-manager
   - ./gitea
   - ./metallb
-  - ./misc
   - ./namespaces
   - ./prometheus-stack
   - ./rancher
