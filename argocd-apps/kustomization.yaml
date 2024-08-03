@@ -9,6 +9,7 @@ resources:
   - ./gitea
   - ./ingress-nginx
   - ./kube-vip
+  - ./metallb
   - ./prometheus-stack
   - ./rancher
   - ./sealed-secrets
