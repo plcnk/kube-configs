@@ -1,0 +1,22 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-vip
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  sources:
+    # Chart from chart repo
+    - repoURL: https://kube-vip.github.io/helm-charts
+      chart: kube-vip
+      targetRevision: 0.6.1
+      helm:
+        valueFiles:
+          - $values/values/kube-vip.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/kube-configs
+      targetRevision: HEAD
+      ref: values
+  project: default

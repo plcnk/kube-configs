@@ -8,6 +8,7 @@ resources:
   - ./cert-manager
   - ./gitea
   - ./ingress-nginx
+  - ./kube-vip
   - ./prometheus-stack
   - ./rancher
   - ./sealed-secrets
