@@ -6,6 +6,7 @@ resources:
   - ./argocd
   - ./authentik
   - ./cert-manager
+  - ./cnpg
   - ./gitea
   - ./ingress-nginx
   - ./kube-vip
