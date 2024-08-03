@@ -64,7 +64,7 @@ ingress:
     nginx.ingress.kubernetes.io/auth-response-headers: >-
       Set-Cookie,X-authentik-username,X-authentik-groups,X-authentik-email,X-authentik-name,X-authentik-uid
     nginx.ingress.kubernetes.io/auth-signin: >-
-      https://status.lab.intra/outpost.goauthentik.io/start?rd=$escaped_request_uri
+      https://status.plcnk.home/outpost.goauthentik.io/start?rd=$escaped_request_uri
     nginx.ingress.kubernetes.io/auth-snippet: |
       proxy_set_header X-Forwarded-Host $http_host;
     nginx.ingress.kubernetes.io/auth-url: >-
@@ -86,7 +86,7 @@ ingress:
         proxy_cache_bypass $http_upgrade;
       }
   hosts:
-    - host: status.lab.intra
+    - host: status.plcnk.home
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -94,7 +94,7 @@ ingress:
   tls:
     - secretName: uptime-kuma-tls
       hosts:
-        - status.lab.intra
+        - status.plcnk.home
 
 resources:
   {}

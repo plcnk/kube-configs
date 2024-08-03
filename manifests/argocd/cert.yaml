@@ -4,19 +4,19 @@ kind: Certificate
 metadata:
   name: argocd-cert
 spec:
-  commonName: argocd.lab.intra
+  commonName: argocd.plcnk.home
   dnsNames:
-  - argocd.lab.intra
+    - argocd.plcnk.home
   issuerRef:
     kind: ClusterIssuer
-    name: rpllabs-issuer
+    name: home-issuer
   secretName: argocd-server-tls
   subject:
     countries:
-    - FR
+      - FR
     localities:
-    - Toulouse
+      - Toulouse
     organizations:
-    - RPL Labs SAS
+      - plcnk Home
     provinces:
-    - Haute-Garonne
+      - Haute-Garonne

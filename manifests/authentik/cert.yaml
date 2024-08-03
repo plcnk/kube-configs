@@ -4,19 +4,19 @@ kind: Certificate
 metadata:
   name: authentik-cert
 spec:
-  commonName: auth.lab.intra
+  commonName: auth.plcnk.home
   dnsNames:
-  - auth.lab.intra
+    - auth.plcnk.home
   issuerRef:
     kind: ClusterIssuer
-    name: rpllabs-issuer
+    name: home-issuer
   secretName: authentik-tls
   subject:
     countries:
-    - FR
+      - FR
     localities:
-    - Toulouse
+      - Toulouse
     organizations:
-    - RPL Labs SAS
+      - plcnk Home
     provinces:
-    - Haute-Garonne
+      - Haute-Garonne

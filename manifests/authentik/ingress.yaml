@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: status.lab.intra
+    - host: status.plcnk.home
       http:
         paths:
           - path: /outpost.goauthentik.io

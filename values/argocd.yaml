@@ -43,7 +43,7 @@ crds:
 global:
   # -- Default domain used by all components
   ## Used for ingresses, certificates, SSO, notifications, etc.
-  domain: argocd.lab.intra
+  domain: argocd.plcnk.home
 
   # -- Common labels for the all resources
   additionalLabels: {}
@@ -199,7 +199,7 @@ configs:
     dex.config: |
       connectors:
         - config:
-            issuer: https://auth.lab.intra/application/o/argocd/
+            issuer: https://auth.plcnk.home/application/o/argocd/
             clientID: 8TTDD1TK5NcFXRa2BnVWNxKrxkNXWOevfskhFSSS
             clientSecret: $dex.authentik.clientSecret
             insecureEnableGroups: true
@@ -2184,7 +2184,7 @@ server:
 
     # -- Argo CD server hostname
     # @default -- `""` (defaults to global.domain)
-    hostname: "argocd.lab.intra"
+    hostname: "argocd.plcnk.home"
 
     # -- The path to Argo CD server
     path: /

@@ -4,19 +4,19 @@ kind: Certificate
 metadata:
   name: rancher-cert
 spec:
-  commonName: rancher.lab.intra
+  commonName: rancher.plcnk.home
   dnsNames:
-  - rancher.lab.intra
+    - rancher.plcnk.home
   issuerRef:
     kind: ClusterIssuer
-    name: rpllabs-issuer
+    name: home-issuer
   secretName: tls-rancher-ingress
   subject:
     countries:
-    - FR
+      - FR
     localities:
-    - Toulouse
+      - Toulouse
     organizations:
-    - RPL Labs SAS
+      - plcnk Home
     provinces:
-    - Haute-Garonne
+      - Haute-Garonne
