@@ -408,7 +408,7 @@ alertmanager:
     ## Hosts must be provided if Ingress is enabled.
     ##
     hosts:
-      - alertmanager.lab.intra
+      - alertmanager.plcnk.home
 
     ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
     ##
@@ -425,7 +425,7 @@ alertmanager:
     tls: []
       # - secretName: alertmanager-tls
       #   hosts:
-      #   - alertmanager.lab.intra
+      #   - alertmanager.plcnk.home
 
   ## Configuration for Alertmanager secret
   ##
@@ -1013,7 +1013,7 @@ grafana:
     # hosts:
     #   - grafana.domain.com
     hosts:
-      - grafana.lab.intra
+      - grafana.plcnk.home
 
     ## Path for grafana ingress
     path: /
@@ -1024,7 +1024,7 @@ grafana:
     tls:
       - secretName: grafana-tls
         hosts:
-        - grafana.lab.intra
+        - grafana.plcnk.home
 
   # # To make Grafana persistent (Using Statefulset)
   # #
@@ -1043,14 +1043,14 @@ grafana:
     autoMount: true
 
   env:
-    GF_SERVER_ROOT_URL: "https://grafana.lab.intra"
+    GF_SERVER_ROOT_URL: "https://grafana.plcnk.home"
     # GF_AUTH_GENERIC_OAUTH_TOKEN_URL: "http://authentik-server.authentik.svc.cluster.local/application/o/token/"
     # GF_AUTH_GENERIC_OAUTH_API_URL: "http://authentik-server.authentik.svc.cluster.local/application/o/userinfo/"
 
 
   grafana.ini:
     auth:
-      signout_redirect_url: "https://auth.lab.intra/application/o/grafana/end-session/"
+      signout_redirect_url: "https://auth.plcnk.home/application/o/grafana/end-session/"
       oauth_auto_login: false
     auth.generic_oauth:
       name: authentik
@@ -1058,9 +1058,9 @@ grafana:
       client_id: $__file{/etc/secrets/oauth_generic/client_id}
       client_secret: $__file{/etc/secrets/oauth_generic/client_secret}
       scopes: "openid profile email"
-      auth_url: "https://auth.lab.intra/application/o/authorize/"
-      token_url: "https://auth.lab.intra/application/o/token/"
-      api_url: "https://auth.lab.intra/application/o/userinfo/"
+      auth_url: "https://auth.plcnk.home/application/o/authorize/"
+      token_url: "https://auth.plcnk.home/application/o/token/"
+      api_url: "https://auth.plcnk.home/application/o/userinfo/"
       # Optionally map user groups to Grafana roles
       role_attribute_path: contains(groups, 'Grafana Admins') && 'Admin' || contains(groups, 'Grafana Editors') && 'Editor' || 'Viewer'
 
@@ -1138,10 +1138,10 @@ grafana:
         implementation: prometheus
 
   extraConfigmapMounts:
-  - name: rpl-ca
-    mountPath: /etc/ssl/certs/rpl-root.crt
-    subPath: rpl-root.crt
-    configMap: rpl-ca
+  - name: plcnk-ca
+    mountPath: /etc/ssl/certs/plcnk-root.crt
+    subPath: plcnk-root.crt
+    configMap: plcnk-ca
     readOnly: true
 
   deleteDatasources: []
@@ -3278,7 +3278,7 @@ prometheus:
     # hosts:
     #   - prometheus.domain.com
     hosts:
-      - prometheus.lab.intra
+      - prometheus.plcnk.home
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##
@@ -3295,7 +3295,7 @@ prometheus:
     tls: []
       # - secretName: prometheus-tls
       #   hosts:
-      #     - prometheus.lab.intra
+      #     - prometheus.plcnk.home
 
   ## Configuration for creating an Ingress that will map to each Prometheus replica service
   ## prometheus.servicePerReplica must be enabled

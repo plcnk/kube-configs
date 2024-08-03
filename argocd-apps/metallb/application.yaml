@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: metallb
 spec:
   destination:
-    namespace: cert-manager
+    namespace: metallb-system
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://charts.jetstack.io
-      chart: cert-manager
-      targetRevision: v1.15.2
+    - repoURL: https://metallb.github.io/metallb
+      chart: metallb
+      targetRevision: 0.14.8
       helm:
         valueFiles:
-          - $values/values/cert-manager.yaml
+          - $values/values/metallb.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD

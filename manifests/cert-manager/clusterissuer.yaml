@@ -2,7 +2,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: rpllabs-issuer
+  name: home-issuer
 spec:
   ca:
-    secretName: rpllabs-ca
+    secretName: home-ca

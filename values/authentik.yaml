@@ -21,14 +21,14 @@ server:
         annotations:
             kubernetes.io/ingress.class: nginx
         hosts:
-            - auth.lab.intra
+            - auth.plcnk.home
         paths:
             - /
         pathType: Prefix
         tls:
             - secretName: authentik-tls
               hosts:
-                  - auth.lab.intra
+                  - auth.plcnk.home
 
 postgresql:
     enabled: true

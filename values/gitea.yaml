@@ -169,14 +169,14 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: git.lab.intra
+    - host: git.plcnk.home
       paths:
         - path: /
           pathType: Prefix
   tls:
     - secretName: gitea-tls
       hosts:
-        - git.lab.intra
+        - git.plcnk.home
   # Mostly for argocd or any other CI that uses `helm template | kubectl apply` or similar
   # If helm doesn't correctly detect your ingress API version you can set it here.
   # apiVersion: networking.k8s.io/v1
@@ -281,23 +281,23 @@ persistence:
 
 ## @param extraVolumes Additional volumes to mount to the Gitea deployment
 extraVolumes:
-  - name: rpl-ca
+  - name: plcnk-ca
     secret:
-      secretName: rpl-ca
+      secretName: plcnk-ca
 
 ## @param extraContainerVolumeMounts Mounts that are only mapped into the Gitea runtime/main container, to e.g. override custom templates.
 extraContainerVolumeMounts:
-  - name: rpl-ca
+  - name: plcnk-ca
     readOnly: true
-    mountPath: "/etc/ssl/certs/rpl-root.crt"
-    subPath: rpl-root.crt
+    mountPath: "/etc/ssl/certs/plcnk-root.crt"
+    subPath: plcnk-root.crt
 
 ## @param extraInitVolumeMounts Mounts that are only mapped into the init-containers. Can be used for additional preconfiguration.
 extraInitVolumeMounts:
-  - name: rpl-ca
+  - name: plcnk-ca
     readOnly: true
-    mountPath: "/etc/ssl/certs/rpl-root.crt"
-    subPath: rpl-root.crt
+    mountPath: "/etc/ssl/certs/plcnk-root.crt"
+    subPath: plcnk-root.crt
 
 ## @deprecated The extraVolumeMounts variable has been split two:
 ## - extraContainerVolumeMounts
@@ -359,7 +359,7 @@ gitea:
     existingSecret:
     username: gitea
     password: Ar8Xh7pMW3KmPgPbUczXwXDi5v11BB
-    email: "gitea@lab.intra"
+    email: "gitea@plcnk.home"
     passwordMode: keepUpdated
 
   ## @param gitea.metrics.enabled Enable Gitea metrics
@@ -395,8 +395,8 @@ gitea:
       provider: openidConnect
       key: xgRDckPoRvSAe4a4TTkvhI17DV6R5qFH1jZIufKd
       secret: tL9CHLn8WcYYba4KsjuQS5vqcnr2zUYwoNWFkYY97AxMhI5pV3ZM8F95pUOzzWsKs0Lym9ZPwYxmleUOaop4Y46dkCto5wYbxZETy7iOIZ0RXEjUGMgjp2UxVKiCYVps
-      autoDiscoverUrl: https://auth.lab.intra/application/o/git/.well-known/openid-configuration
-      iconUrl: https://auth.lab.intra/static/dist/assets/icons/icon.svg
+      autoDiscoverUrl: https://auth.plcnk.home/application/o/git/.well-known/openid-configuration
+      iconUrl: https://auth.plcnk.home/static/dist/assets/icons/icon.svg
       scopes: "email profile gitea"
       requiredClaimName: "gitea"
       groupClaimName: "gitea"

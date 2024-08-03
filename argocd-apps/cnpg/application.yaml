@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: cloudnative-pg
 spec:
   destination:
-    namespace: cert-manager
+    namespace: cnpg-system
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://charts.jetstack.io
-      chart: cert-manager
-      targetRevision: v1.15.2
+    - repoURL: https://cloudnative-pg.io/charts
+      chart: cloudnative-pg
+      targetRevision: 0.21.6
       helm:
         valueFiles:
-          - $values/values/cert-manager.yaml
+          - $values/values/cnpg.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD

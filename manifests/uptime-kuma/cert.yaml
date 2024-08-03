@@ -4,12 +4,12 @@ kind: Certificate
 metadata:
   name: uptime-kuma-cert
 spec:
-  commonName: status.lab.intra
+  commonName: status.plcnk.home
   dnsNames:
-    - status.lab.intra
+    - status.plcnk.home
   issuerRef:
     kind: ClusterIssuer
-    name: rpllabs-issuer
+    name: home-issuer
   secretName: uptime-kuma-tls
   subject:
     countries:
@@ -17,6 +17,6 @@ spec:
     localities:
       - Toulouse
     organizations:
-      - RPL Labs SAS
+      - plcnk Home
     provinces:
       - Haute-Garonne

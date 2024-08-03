@@ -4,19 +4,19 @@ kind: Certificate
 metadata:
   name: grafana-cert
 spec:
-  commonName: grafana.lab.intra
+  commonName: grafana.plcnk.home
   dnsNames:
-  - grafana.lab.intra
+    - grafana.plcnk.home
   issuerRef:
     kind: ClusterIssuer
-    name: rpllabs-issuer
+    name: home-issuer
   secretName: grafana-tls
   subject:
     countries:
-    - FR
+      - FR
     localities:
-    - Toulouse
+      - Toulouse
     organizations:
-    - RPL Labs SAS
+      - plcnk Home
     provinces:
-    - Haute-Garonne
+      - Haute-Garonne

@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: kube-vip
 spec:
   destination:
-    namespace: cert-manager
+    namespace: kube-system
     server: https://kubernetes.default.svc
   sources:
     # Chart from chart repo
-    - repoURL: https://charts.jetstack.io
-      chart: cert-manager
-      targetRevision: v1.15.2
+    - repoURL: https://kube-vip.github.io/helm-charts
+      chart: kube-vip
+      targetRevision: 0.6.1
       helm:
         valueFiles:
-          - $values/values/cert-manager.yaml
+          - $values/values/kube-vip.yaml
     # Values from git
     - repoURL: https://github.com/plcnk/kube-configs
       targetRevision: HEAD

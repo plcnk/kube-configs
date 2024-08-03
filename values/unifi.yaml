@@ -40,14 +40,14 @@ ingress:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
   hosts:
-    - host: unifi.lab.intra
+    - host: unifi.plcnk.home
       paths:
         - path: /
           pathType: Prefix
   tls:
     - secretName: unifi-tls
       hosts:
-        - unifi.lab.intra
+        - unifi.plcnk.home
 
 
 # if set, use this persistant volume claim for the internal mongodb
