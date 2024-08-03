@@ -5,4 +5,4 @@ namespace: monitoring
 resources:
   - cert-grafana.yaml
   - oauth-secret.yaml
-  - rpl-ca.yaml
+  - plcnk-ca.yaml

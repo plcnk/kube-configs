@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 data:
-  rpl-root.crt: |
+  plcnk-root.crt: |
     -----BEGIN CERTIFICATE-----
     MIIFhTCCA22gAwIBAgIUWcGUAKtjcYeyyteHYzEXzbztUFcwDQYJKoZIhvcNAQEL
     BQAwUjEZMBcGA1UEAwwQUlBMIExhYnMgUm9vdCBDQTELMAkGA1UEBhMCRlIxETAP
@@ -36,4 +36,4 @@ data:
     -----END CERTIFICATE-----
 kind: ConfigMap
 metadata:
-  name: rpl-ca
+  name: plcnk-ca

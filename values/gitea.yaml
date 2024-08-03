@@ -281,23 +281,23 @@ persistence:
 
 ## @param extraVolumes Additional volumes to mount to the Gitea deployment
 extraVolumes:
-  - name: rpl-ca
+  - name: plcnk-ca
     secret:
-      secretName: rpl-ca
+      secretName: plcnk-ca
 
 ## @param extraContainerVolumeMounts Mounts that are only mapped into the Gitea runtime/main container, to e.g. override custom templates.
 extraContainerVolumeMounts:
-  - name: rpl-ca
+  - name: plcnk-ca
     readOnly: true
-    mountPath: "/etc/ssl/certs/rpl-root.crt"
-    subPath: rpl-root.crt
+    mountPath: "/etc/ssl/certs/plcnk-root.crt"
+    subPath: plcnk-root.crt
 
 ## @param extraInitVolumeMounts Mounts that are only mapped into the init-containers. Can be used for additional preconfiguration.
 extraInitVolumeMounts:
-  - name: rpl-ca
+  - name: plcnk-ca
     readOnly: true
-    mountPath: "/etc/ssl/certs/rpl-root.crt"
-    subPath: rpl-root.crt
+    mountPath: "/etc/ssl/certs/plcnk-root.crt"
+    subPath: plcnk-root.crt
 
 ## @deprecated The extraVolumeMounts variable has been split two:
 ## - extraContainerVolumeMounts

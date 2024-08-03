@@ -1030,16 +1030,16 @@ dex:
 
   # -- Additional volumeMounts to the dex main container
   volumeMounts:
-  - name: rpl-ca
-    mountPath: /etc/ssl/certs/rpl-root.crt
-    subPath: rpl-root.crt
+  - name: plcnk-ca
+    mountPath: /etc/ssl/certs/plcnk-root.crt
+    subPath: plcnk-root.crt
     readOnly: false
 
   # -- Additional volumes to the dex pod
   volumes:
-  - name: rpl-ca
+  - name: plcnk-ca
     configMap:
-      name: rpl-ca
+      name: plcnk-ca
 
   ## Dex server emptyDir volumes
   emptyDir:

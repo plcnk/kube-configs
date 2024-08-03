@@ -1138,10 +1138,10 @@ grafana:
         implementation: prometheus
 
   extraConfigmapMounts:
-  - name: rpl-ca
-    mountPath: /etc/ssl/certs/rpl-root.crt
-    subPath: rpl-root.crt
-    configMap: rpl-ca
+  - name: plcnk-ca
+    mountPath: /etc/ssl/certs/plcnk-root.crt
+    subPath: plcnk-root.crt
+    configMap: plcnk-ca
     readOnly: true
 
   deleteDatasources: []
