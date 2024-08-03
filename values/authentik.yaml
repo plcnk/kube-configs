@@ -24,6 +24,7 @@ authentik:
     host: "cnpg-authentik-rw"
 
 server:
+  replicas: 3
   ingress:
     # Specify kubernetes ingress controller class name
     ingressClassName: nginx
@@ -39,6 +40,9 @@ server:
       - secretName: authentik-tls
         hosts:
           - auth.plcnk.home
+
+worker:
+  replicas: 3
 
 postgresql:
   enabled: false
