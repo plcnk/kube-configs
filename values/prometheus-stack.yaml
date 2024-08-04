@@ -3666,11 +3666,11 @@ prometheus:
     #     prometheus: somelabel
 
     ## If nil, select own namespace. Namespaces to be selected for PodMonitor discovery.
-    podMonitorNamespaceSelector: {}
+    # podMonitorNamespaceSelector: {}
     ## Example which selects PodMonitor in namespaces with label "prometheus" set to "somelabel"
-    # podMonitorNamespaceSelector:
-    #   matchLabels:
-    #     prometheus: somelabel
+    podMonitorNamespaceSelector:
+      matchLabels:
+        prometheus: podmon
 
     ## If true, a nil or {} value for prometheus.prometheusSpec.probeSelector will cause the
     ## prometheus resource to be created with selectors based on values in the helm deployment,
