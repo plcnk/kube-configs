@@ -356,9 +356,7 @@ gitea:
   ## @param gitea.admin.passwordMode Mode for how to set/update the admin user password. Options are: initialOnlyNoReset, initialOnlyRequireReset, and keepUpdated
   admin:
     # existingSecret: gitea-admin-secret
-    existingSecret:
-    username: gitea
-    password: Ar8Xh7pMW3KmPgPbUczXwXDi5v11BB
+    existingSecret: admin-creds
     email: "gitea@plcnk.home"
     passwordMode: keepUpdated
 
@@ -393,8 +391,7 @@ gitea:
   oauth:
     - name: Authentik
       provider: openidConnect
-      key: xgRDckPoRvSAe4a4TTkvhI17DV6R5qFH1jZIufKd
-      secret: tL9CHLn8WcYYba4KsjuQS5vqcnr2zUYwoNWFkYY97AxMhI5pV3ZM8F95pUOzzWsKs0Lym9ZPwYxmleUOaop4Y46dkCto5wYbxZETy7iOIZ0RXEjUGMgjp2UxVKiCYVps
+      existingSecret: oauth-generic
       autoDiscoverUrl: https://auth.plcnk.home/application/o/git/.well-known/openid-configuration
       iconUrl: https://auth.plcnk.home/static/dist/assets/icons/icon.svg
       scopes: "email profile gitea"
@@ -408,6 +405,8 @@ gitea:
     #  APP_NAME: "Gitea: Git with a cup of tea"
     admin:
       DISABLE_REGULAR_ORG_CREATION: true
+    database:
+      DB_TYPE: postgres
     oauth2_client:
       ENABLE_AUTO_REGISTRATION: true
     service:
@@ -445,7 +444,24 @@ gitea:
   #       name: gitea-app-ini-plaintext
 
   ## @param gitea.additionalConfigFromEnvs Additional configuration sources from environment variables
-  additionalConfigFromEnvs: []
+  additionalConfigFromEnvs:
+    - name: GITEA__DATABASE__HOST
+      value: cnpg-gitea-rw.gitea.svc.cluster.local:5432
+    - name: GITEA__DATABASE__NAME
+      valueFrom:
+        secretKeyRef:
+          name: cnpg-gitea-app
+          key: dbname
+    - name: GITEA__DATABASE__USER
+      valueFrom:
+        secretKeyRef:
+          name: cnpg-gitea-app
+          key: username
+    - name: GITEA__DATABASE__PASSWD
+      valueFrom:
+        secretKeyRef:
+          name: cnpg-gitea-app
+          key: password
 
   ## @param gitea.podAnnotations Annotations for the Gitea pod
   podAnnotations: {}
@@ -536,9 +552,9 @@ redis-cluster:
 redis:
   enabled: true
   architecture: standalone
-  global:
-    redis:
-      password: PlW1JX6f9oWng8xMmELu4t7AAMDTPN
+  auth:
+    existingSecret: redis-password
+    existingSecretPasswordKey: password
   image:
     registry: docker.io
     repository: bitnami/redis
@@ -570,24 +586,24 @@ postgresql-ha:
 ## @param postgresql.global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
 ## @param postgresql.primary.persistence.size PVC Storage Request for PostgreSQL volume
 postgresql:
-  enabled: true
-  global:
-    postgresql:
-      auth:
-        postgresPassword: IMYjvPJhefH3BZ183vN0c2geClruv7
-        password: oqwuntoDzr3c7XShRHa8L04EbrdsBT
-        database: gitea
-        username: gitea
-      service:
-        ports:
-          postgresql: 5432
-  image:
-    registry: docker.io
-    repository: bitnami/postgresql
-    tag: 16.3.0-debian-12-r23
-  primary:
-    persistence:
-      size: 10Gi
+  enabled: false
+  # global:
+  #   postgresql:
+  #     auth:
+  #       postgresPassword: IMYjvPJhefH3BZ183vN0c2geClruv7
+  #       password: oqwuntoDzr3c7XShRHa8L04EbrdsBT
+  #       database: gitea
+  #       username: gitea
+  #     service:
+  #       ports:
+  #         postgresql: 5432
+  # image:
+  #   registry: docker.io
+  #   repository: bitnami/postgresql
+  #   tag: 16.3.0-debian-12-r23
+  # primary:
+  #   persistence:
+  #     size: 10Gi
 
 # By default, removed or moved settings that still remain in a user defined values.yaml will cause Helm to fail running the install/update.
 # Set it to false to skip this basic validation check.

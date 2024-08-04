@@ -1,0 +1,16 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cnpg-gitea
+spec:
+  bootstrap:
+    initdb:
+      database: gitea
+  instances: 3
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 10Gi
+  monitoring:
+    enablePodMonitor: true
