@@ -26,6 +26,7 @@ service:
   type: "LoadBalancer"
   annotations:
     metallb.universe.tf/allow-shared-ip: "unifi-shared-key"
+    metallb.universe.tf/loadBalancerIPs: 10.0.50.11
   ports:
     devicecom: 8080
     webapi: 8443
