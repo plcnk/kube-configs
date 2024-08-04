@@ -9,3 +9,4 @@ resources:
   - sealed-admin-creds.yaml
   - sealed-oauth-generic.yaml
   - sealed-redis-password.yaml
+  - sealed-redis-url.yaml

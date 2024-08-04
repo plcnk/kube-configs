@@ -462,6 +462,21 @@ gitea:
         secretKeyRef:
           name: cnpg-gitea-app
           key: password
+    - name: GITEA__CACHE__HOST
+      valueFrom:
+        secretKeyRef:
+          name: redis-url
+          key: url
+    - name: GITEA__QUEUE__CONN_STR
+      valueFrom:
+        secretKeyRef:
+          name: redis-url
+          key: url
+    - name: GITEA__SESSION__PROVIDER_CONFIG
+      valueFrom:
+        secretKeyRef:
+          name: redis-url
+          key: url
 
   ## @param gitea.podAnnotations Annotations for the Gitea pod
   podAnnotations: {}
