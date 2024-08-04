@@ -5,3 +5,7 @@ namespace: gitea
 resources:
   - cert.yaml
   - plcnk-ca.yaml
+  - cnpg-gitea.yaml
+  - sealed-admin-creds.yaml
+  - sealed-oauth-generic.yaml
+  - sealed-redis-password.yaml
