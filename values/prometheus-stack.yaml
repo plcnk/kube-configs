@@ -1069,7 +1069,7 @@ grafana:
 
   extraSecretMounts:
     - name: oauth-secret-mount
-      secretName: oauth-secret
+      secretName: oauth-generic
       defaultMode: 0440
       mountPath: /etc/secrets/oauth_generic
       readOnly: true
