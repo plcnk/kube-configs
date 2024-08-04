@@ -1,0 +1,9 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: unifi
+spec:
+  addresses:
+  - 10.0.50.11/32
+  autoAssign: false
