@@ -3654,7 +3654,7 @@ prometheus:
     ## prometheus resource to be created with selectors based on values in the helm deployment,
     ## which will also match the podmonitors created
     ##
-    podMonitorSelectorNilUsesHelmValues: true
+    podMonitorSelectorNilUsesHelmValues: false
 
     ## PodMonitors to be selected for target discovery.
     ## If {}, select all PodMonitors
@@ -3670,7 +3670,7 @@ prometheus:
     ## Example which selects PodMonitor in namespaces with label "prometheus" set to "somelabel"
     podMonitorNamespaceSelector:
       matchLabels:
-        prometheus: podmon
+        prometheus-scrape: "true"
 
     ## If true, a nil or {} value for prometheus.prometheusSpec.probeSelector will cause the
     ## prometheus resource to be created with selectors based on values in the helm deployment,
