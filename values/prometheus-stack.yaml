@@ -980,7 +980,10 @@ grafana:
   ##
   defaultDashboardsEditable: true
 
-  adminPassword: eo4TwAgxR5rQDNb57kY9xwPq7ddFew
+  admin:
+    existingSecret: grafana-admin
+    userKey: admin-user
+    passwordKey: admin-password
 
   rbac:
     ## If true, Grafana PSPs will be created
@@ -1031,7 +1034,7 @@ grafana:
   persistence:
     enabled: true
     type: sts
-    storageClassName: "local-path"
+    storageClassName: "longhorn"
     accessModes:
       - ReadWriteOnce
     size: 8Gi
@@ -3825,7 +3828,7 @@ prometheus:
     ##
       volumeClaimTemplate:
         spec:
-          storageClassName: local-path
+          storageClassName: longhorn
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
