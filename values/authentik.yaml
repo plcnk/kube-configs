@@ -40,13 +40,6 @@ server:
       - secretName: authentik-tls
         hosts:
           - auth.plcnk.home
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: true
-      namespace: monitoring
-      labels:
-        release: prometheus-stack
 
 worker:
   replicas: 1
