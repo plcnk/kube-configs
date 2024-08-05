@@ -40,6 +40,10 @@ server:
       - secretName: authentik-tls
         hosts:
           - auth.plcnk.home
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
 
 worker:
   replicas: 1
