@@ -24,7 +24,7 @@ authentik:
     host: "cnpg-authentik-rw"
 
 server:
-  replicas: 3
+  replicas: 2
   ingress:
     # Specify kubernetes ingress controller class name
     ingressClassName: nginx
@@ -42,7 +42,7 @@ server:
           - auth.plcnk.home
 
 worker:
-  replicas: 3
+  replicas: 1
 
 postgresql:
   enabled: false
