@@ -4154,7 +4154,11 @@ prometheus:
   #      - nodes/proxy
   #    verbs: [ "get", "list", "watch" ]
 
-  additionalServiceMonitors: []
+  additionalServiceMonitors:
+    - name: "Authentik"
+      namespaceSelector:
+        matchNames:
+          - authentik
   ## Name of the ServiceMonitor to create
   ##
   # - name: ""

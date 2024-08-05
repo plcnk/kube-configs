@@ -10,7 +10,6 @@ metadata:
   name: authentik
   labels:
     prometheus-scrape: "true"
-    prometheus-scrape-svc: "true"
 ---
 apiVersion: v1
 kind: Namespace
