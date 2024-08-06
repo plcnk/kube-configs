@@ -3816,11 +3816,7 @@ prometheus:
 
     ## Resource limits & requests
     ##
-    resources:
-      requests:
-        memory: 800Mi
-      limits:
-        memory: 3Gi
+    resources: {}
 
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
