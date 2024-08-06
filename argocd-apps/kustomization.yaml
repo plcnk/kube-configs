@@ -8,6 +8,7 @@ resources:
   - ./cert-manager
   - ./cnpg
   - ./gitea
+  - ./homepage
   - ./ingress-nginx
   - ./kube-vip
   - ./metallb
