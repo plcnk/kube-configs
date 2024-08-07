@@ -8,6 +8,7 @@ resources:
   - ./flux
   - ./gitea
   - ./homepage
+  - ./longhorn
   - ./metallb
   - ./namespaces
   - ./prometheus-stack
