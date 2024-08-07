@@ -14,3 +14,14 @@ spec:
     size: 8Gi
   monitoring:
     enablePodMonitor: true
+  backup:
+    retentionPolicy: "30d"
+    barmanObjectStore:
+      destinationPath: "s3://plcnk-k3s-backups/cnpg-backups"
+      s3Credentials:
+        accessKeyId:
+          name: aws-creds
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: aws-creds
+          key: ACCESS_SECRET_KEY
