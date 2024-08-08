@@ -3830,7 +3830,7 @@ prometheus:
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
-              storage: 50Gi
+              storage: 100Gi
 
     ## Using tmpfs volume
     ##
