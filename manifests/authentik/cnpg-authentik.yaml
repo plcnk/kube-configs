@@ -16,7 +16,7 @@ spec:
   monitoring:
     enablePodMonitor: true
   backup:
-    retentionPolicy: "30d"
+    retentionPolicy: "15d"
     barmanObjectStore:
       destinationPath: "s3://plcnk-k3s-backups/cnpg-backups"
       s3Credentials:
