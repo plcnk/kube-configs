@@ -4,6 +4,7 @@ kind: Cluster
 metadata:
   name: cnpg-authentik
 spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.3
   bootstrap:
     initdb:
       database: authentik
