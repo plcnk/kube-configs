@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - cert-grafana.yaml
+  - cnpg-alerts.yaml
   - sealed-grafana-admin.yaml
   - sealed-oauth-generic.yaml
   - plcnk-ca.yaml
