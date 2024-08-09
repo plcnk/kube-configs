@@ -28,13 +28,6 @@ controller:
 ingress:
   main:
     enabled: true
-    annotations:
-      # These annotations will configure how this deployment is shown in Homepage
-      gethomepage.dev/enabled: "true"
-      gethomepage.dev/name: "Homepage"
-      gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
-      gethomepage.dev/group: "A New Group"
-      gethomepage.dev/icon: "homepage.png"
     ingressClassName: "nginx"
     hosts:
       - host: "dash.plcnk.home"
@@ -46,33 +39,28 @@ ingress:
           - "dash.plcnk.home"
         secretName: homepage-tls
 
+env:
+  HOMEPAGE_VAR_UNIFI_USER:
+    valueFrom:
+      secretKeyRef:
+        name: unifi-ro-creds
+        key: username
+  HOMEPAGE_VAR_UNIFI_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: unifi-ro-creds
+        key: password
+
 # All the config files for Homepage can be specified under their relevant config block.
 config:
   # To use an existing ConfigMap uncomment this line and specify the name
   # useExistingConfigMap: existing-homepage-configmap
-  bookmarks:
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+  bookmarks: []
   services:
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
-
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
-
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+    - Infrastructure: []
   widgets:
     - search:
-        provider: duckduckgo
+        provider: google
         target: _blank
     - kubernetes:
         cluster:
@@ -86,6 +74,11 @@ config:
           cpu: true
           memory: true
           showLabel: true
+    - unifi_console:
+        url: https://unifi.plcnk.home
+        username: "{{HOMEPAGE_VAR_UNIFI_USER}}"
+        password: "{{HOMEPAGE_VAR_UNIFI_PASSWORD}}"
+        site: Home
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: cluster
