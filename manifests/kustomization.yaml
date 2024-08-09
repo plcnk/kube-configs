@@ -8,6 +8,7 @@ resources:
   - ./flux
   - ./gitea
   - ./homepage
+  - ./kured
   - ./longhorn
   - ./metallb
   - ./namespaces
