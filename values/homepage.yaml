@@ -50,6 +50,16 @@ env:
       secretKeyRef:
         name: homepage-env
         key: unifi_password
+  HOMEPAGE_VAR_ADGUARD_USER:
+    valueFrom:
+      secretKeyRef:
+        name: homepage-env
+        key: adguard_user
+  HOMEPAGE_VAR_ADGUARD_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: homepage-env
+        key: adguard_password
 
 # All the config files for Homepage can be specified under their relevant config block.
 config:
@@ -57,7 +67,17 @@ config:
   # useExistingConfigMap: existing-homepage-configmap
   bookmarks: []
   services:
-    - Infrastructure: []
+    - Infrastructure:
+        - Adguard Home:
+            icon: adguard-home.png
+            href: https://dns.plcnk.net
+            siteMonitor: https://dns.plcnk.net
+            description: DNS Server
+            widget:
+              type: adguard
+              url: https://dns.plcnk.net
+              username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
+              password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
   widgets:
     - search:
         provider: google
@@ -79,17 +99,23 @@ config:
         username: "{{HOMEPAGE_VAR_UNIFI_USER}}"
         password: "{{HOMEPAGE_VAR_UNIFI_PASSWORD}}"
         site: Home
-    - datetime:
-      locale: fr-FR
-      format:
-        dateStyle: short
-        timeStyle: short
-        timeZone: Europe/Paris
+    - openmeteo:
+        label: Toulouse
+        latitude: 43.6043
+        longitude: 1.4437
+        timezone: Europe/Paris
+        units: metric
+        cache: 15
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: cluster
   docker:
   settings:
+    layout:
+      Infrastructure:
+        style: row
+        columns: 4
+        icon: mdi-lan
 
 persistence:
   logs:
