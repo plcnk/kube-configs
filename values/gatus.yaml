@@ -92,11 +92,15 @@ ingress:
 
 # Extra environment variables that will be pass onto deployment pods
 # Expects key: value
-env:
-  PG_USER: $__file{/mnt/pg-creds/username}
-  PG_PASSWORD: $__file{/mnt/pg-creds/password}
-  PG_HOST: $__file{/mnt/pg-creds/host}
-  PG_DBNAME: $__file{/mnt/pg-creds/dbname}
+# env:
+#   PG_USER: $__file{/mnt/pg-creds/username}
+#   PG_PASSWORD: $__file{/mnt/pg-creds/password}
+#   PG_HOST: $__file{/mnt/pg-creds/host}
+#   PG_DBNAME: $__file{/mnt/pg-creds/dbname}
+
+envFrom:
+  - secretRef:
+    name: cnpg-gatus-app
 
 # Sidecar containers in the pod
 sidecarContainers: {}
@@ -177,9 +181,9 @@ networkPolicy:
 # Gatus configuration
 # ref: https://github.com/TwiN/gatus#configuration
 config:
-  storage:
-    type: postgres
-    path: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:5432/${PG_DBNAME}?sslmode=disable
+  # storage:
+  #   type: postgres
+  #   path: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:5432/${PG_DBNAME}?sslmode=disable
   endpoints:
     - name: example
       url: https://example.org
