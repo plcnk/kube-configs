@@ -300,7 +300,7 @@ config:
       url: https://portainer.plcnk.net
       group: 4. Docker Services
     - name: Traefik
-      <<: *auth
+      <<: *default
       url: https://traefik.plcnk.net
       group: 4. Docker Services
 

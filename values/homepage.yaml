@@ -94,6 +94,14 @@ config:
               url: https://portainer.plcnk.net
               env: 2
               key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
+        - Traefik:
+            icon: portainer.png
+            href: https://traefik.plcnk.net
+            siteMonitor: https://traefik.plcnk.net
+            description: Reverse Proxy
+            widget:
+              type: traefik
+              url: https://traefik.plcnk.net
   widgets:
     - search:
         provider: google
