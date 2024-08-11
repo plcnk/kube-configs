@@ -23,4 +23,4 @@ Current services:
   * [Homepage](https://gethomepage.dev/latest/)
   * [Prometheus Stack](https://github.com/prometheus-operator/kube-prometheus)
   * [Unifi Controller](https://github.com/Qonstrukt/helm-charts/tree/main/charts/unifi-controller) (Obsolete image)
-  * [Uptime Kuma](https://github.com/louislam/uptime-kuma)
+  * [Gatus](https://gatus.io/)
