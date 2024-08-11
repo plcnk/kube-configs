@@ -215,88 +215,115 @@ config:
       - "[CERTIFICATE_EXPIRATION] > 10d"
 
   endpoints:
+    - name: DNS - External query
+      interval: 1m
+      client:
+        timeout: 10s
+      alerts:
+        - type: discord
+      dns:
+        query-name: google.com
+        query-type: A
+      conditions:
+        - "[BODY] == 216.58.214.174"
+        - "[DNS_RCODE] == NOERROR"
+      group: 1. DNS
+    - name: DNS - Internal query
+      interval: 1m
+      client:
+        timeout: 10s
+      alerts:
+        - type: discord
+      dns:
+        query-name: k3s.plcnk.home
+        query-type: A
+      conditions:
+        - "[BODY] == 10.0.50.1"
+        - "[DNS_RCODE] == NOERROR"
+      group: 1. DNS
+
     - name: Vaultwarden
       <<: *default
       url: https://vault.plcnk.net
-      group: External Services
-
-    - name: Adguard Home
-      <<: *default
-      url: https://dns.plcnk.net
-      group: Docker Services
-    - name: Portainer
-      <<: *default
-      url: https://portainer.plcnk.net
-      group: Docker Services
-    - name: Traefik
-      <<: *auth
-      url: https://traefik.plcnk.net
-      group: Docker Services
+      group: 2. External Services
 
     - name: Router
       <<: *default
       url: https://router.plcnk.net
-      group: Home Infra
+      group: 3. Home Infra
     - name: Switch 1
       <<: *auth
       url: https://sw1.plcnk.net
-      group: Home Infra
+      group: 3. Home Infra
     - name: Switch 2
       <<: *default
       url: https://sw2.plcnk.net
-      group: Home Infra
+      group: 3. Home Infra
     - name: Unifi AP
       <<: *icmp
       url: icmp://unifi-ap-1.plcnk.net
-      group: Home Infra
+      group: 3. Home Infra
     - name: Raspberry Pi
       <<: *icmp
       url: icmp://raspi.plcnk.net
-      group: Home Infra
+      group: 3. Home Infra
+
+    - name: Adguard Home
+      <<: *default
+      url: https://dns.plcnk.net
+      group: 4. Docker Services
+    - name: Portainer
+      <<: *default
+      url: https://portainer.plcnk.net
+      group: 4. Docker Services
+    - name: Traefik
+      <<: *auth
+      url: https://traefik.plcnk.net
+      group: 4. Docker Services
 
     - name: VIP
       <<: *icmp
       url: icmp://k3s.plcnk.home
-      group: Kube Nodes
+      group: 5. Kube Nodes
     - name: k3s-01
       <<: *icmp
       url: icmp://k3s-01.plcnk.home
-      group: Kube Nodes
+      group: 5. Kube Nodes
     - name: k3s-02
       <<: *icmp
       url: icmp://k3s-02.plcnk.home
-      group: Kube Nodes
+      group: 5. Kube Nodes
     - name: k3s-03
       <<: *icmp
       url: icmp://k3s-03.plcnk.home
-      group: Kube Nodes
+      group: 5. Kube Nodes
 
     - name: Authentik
       <<: *default
       url: https://auth.plcnk.home
-      group: Kube Infra
+      group: 6. Kube Infra
     - name: Rancher
       <<: *default
       url: https://rancher.plcnk.home
-      group: Kube Infra
+      group: 6. Kube Infra
     - name: Argo CD
       <<: *default
       url: https://argocd.plcnk.home
-      group: Kube Infra
+      group: 6. Kube Infra
 
     - name: Gitea
       <<: *default
       url: https://git.plcnk.home
-      group: Kube Services
+      group: 7. Kube Services
     - name: Homepage
       <<: *default
       url: https://dash.plcnk.home
-      group: Kube Services
+      group: 7. Kube Services
     - name: Grafana
       <<: *default
       url: https://grafana.plcnk.home
-      group: Kube Services
+      group: 7. Kube Services
     - name: Unifi Controller
       <<: *default
       url: https://unifi.plcnk.home
-      group: Kube Services
+      group: 7. Kube Services
