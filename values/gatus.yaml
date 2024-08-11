@@ -74,9 +74,15 @@ ingress:
   # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
   ingressClassName: nginx
   # Values can be templated
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  annotations:
+    gethomepage.dev/enabled: true
+    gethomepage.dev/name: Gatus
+    gethomepage.dev/description: Status Page
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/icon: gatus.png
+    gethomepage.dev/href: https://status.plcnk.home
+    gethomepage.dev/widget.type: gatus
+    gethomepage.dev/widget.url: https://status.plcnk.home
   labels: {}
   path: /
   # pathType is only for k8s >= 1.1=

@@ -78,6 +78,7 @@ config:
               url: https://dns.plcnk.net
               username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
               password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
+              fields: ["queries", "blocked", "latency"]
   widgets:
     - search:
         provider: google
