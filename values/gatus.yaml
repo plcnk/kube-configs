@@ -197,12 +197,13 @@ config:
     client:
       timeout: 10s
       insecure: true
+      dns-resolver: "tcp://10.0.1.3:53"
     alerts:
       - type: discord
     conditions:
       - "[CONNECTED] == true"
 
-  endpoint-traefik: &traefik
+  endpoint-auth: &auth
     interval: 1m
     client:
       timeout: 10s
@@ -228,7 +229,7 @@ config:
       url: https://portainer.plcnk.net
       group: Docker Services
     - name: Traefik
-      <<: *traefik
+      <<: *auth
       url: https://traefik.plcnk.net
       group: Docker Services
 
@@ -237,7 +238,7 @@ config:
       url: https://router.plcnk.net
       group: Home Infra
     - name: Switch 1
-      <<: *default
+      <<: *auth
       url: https://sw1.plcnk.net
       group: Home Infra
     - name: Switch 2
