@@ -4,9 +4,9 @@ kind: Certificate
 metadata:
   name: gatus-cert
 spec:
-  commonName: gatus.plcnk.home
+  commonName: status.plcnk.home
   dnsNames:
-    - gatus.plcnk.home
+    - status.plcnk.home
   issuerRef:
     kind: ClusterIssuer
     name: home-issuer

@@ -18,4 +18,3 @@ resources:
   - ./rancher
   - ./sealed-secrets
   - ./unifi
-  - ./uptime-kuma
