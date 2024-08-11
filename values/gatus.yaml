@@ -81,6 +81,7 @@ ingress:
     gethomepage.dev/group: Infrastructure
     gethomepage.dev/icon: gatus.png
     gethomepage.dev/href: https://status.plcnk.home
+    gethomepage.dev/siteMonitor: https://status.plcnk.home
     gethomepage.dev/widget.type: gatus
     gethomepage.dev/widget.url: https://status.plcnk.home
   labels: {}
