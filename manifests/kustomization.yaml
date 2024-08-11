@@ -16,4 +16,3 @@ resources:
   - ./prometheus-stack
   - ./rancher
   - ./unifi
-  - ./uptime-kuma

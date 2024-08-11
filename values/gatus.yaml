@@ -83,13 +83,13 @@ ingress:
   pathType: Prefix
   extraPaths: []
   hosts:
-    - gatus.plcnk.home
+    - status.plcnk.home
   # Extra paths to prepend to every host configuration, requires `ingress.hosts` to have one or more host entries.
   # Useful when configuring [custom actions with AWS ALB Ingress Controller](https://kubernetes-sigs.github.io/aws-alb-ingress-controller/guide/ingress/annotation/#actions).
   tls:
     - secretName: gatus-tls
       hosts:
-        - gatus.plcnk.home
+        - status.plcnk.home
 
 # Extra environment variables that will be pass onto deployment pods
 # Expects key: value
