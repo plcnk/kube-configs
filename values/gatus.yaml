@@ -172,18 +172,29 @@ config:
   storage:
     type: postgres
     path: ${PG_URI}?sslmode=disable
+
   alerting:
     discord:
       webhook-url: ${DISCORD_WEBHOOK}
+      default-alert:
+        description: "Health Check Failed"
+        send-on-resolved: true
+        failure-threshold: 2
+        success-threshold: 2
+
   endpoint-defaults: &default
     interval: 1m
     client:
       timeout: 10s
       insecure: true
+    alerts:
+      - type: discord
     conditions:
       - "[STATUS] == 200"
       - "[CERTIFICATE_EXPIRATION] > 10d"
+
   endpoints:
     - name: Gitea
       <<: *default
       url: https://git.plcnk.home
+      group: DevOps
