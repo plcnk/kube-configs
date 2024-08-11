@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: homepage
 resources:
   - cert.yaml
-  - sealed-unifi-ro-creds.yaml
+  - sealed-homepage-env.yaml

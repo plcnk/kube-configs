@@ -43,13 +43,13 @@ env:
   HOMEPAGE_VAR_UNIFI_USER:
     valueFrom:
       secretKeyRef:
-        name: unifi-ro-creds
-        key: username
+        name: homepage-env
+        key: unifi_username
   HOMEPAGE_VAR_UNIFI_PASSWORD:
     valueFrom:
       secretKeyRef:
-        name: unifi-ro-creds
-        key: password
+        name: homepage-env
+        key: unifi_password
 
 # All the config files for Homepage can be specified under their relevant config block.
 config:
@@ -79,6 +79,12 @@ config:
         username: "{{HOMEPAGE_VAR_UNIFI_USER}}"
         password: "{{HOMEPAGE_VAR_UNIFI_PASSWORD}}"
         site: Home
+    - datetime:
+      locale: fr-FR
+      format:
+        dateStyle: short
+        timeStyle: short
+        timeZone: Europe/Paris
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: cluster
