@@ -6,6 +6,7 @@ resources:
   - ./authentik
   - ./cert-manager
   - ./flux
+  - ./gatus
   - ./gitea
   - ./homepage
   - ./kured
