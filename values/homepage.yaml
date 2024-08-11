@@ -60,6 +60,11 @@ env:
       secretKeyRef:
         name: homepage-env
         key: adguard_password
+  HOMEPAGE_VAR_PORTAINER_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: homepage-env
+        key: portainer_key
 
 # All the config files for Homepage can be specified under their relevant config block.
 config:
@@ -79,6 +84,16 @@ config:
               username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
               password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
               fields: ["queries", "blocked", "latency"]
+        - Portainer:
+            icon: portainer.png
+            href: https://portainer.plcnk.net
+            siteMonitor: https://portainer.plcnk.net
+            description: Container Management Software
+            widget:
+              type: portainer
+              url: https://portainer.plcnk.net
+              env: 2
+              key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
   widgets:
     - search:
         provider: google
