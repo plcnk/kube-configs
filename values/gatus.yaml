@@ -115,7 +115,7 @@ extraVolumeMounts:
     existingSecret: cnpg-gatus-app
 
 # Include secret's content in pods environment
-secrets: false
+secrets: true
 
 resources: {}
 #  limits:
