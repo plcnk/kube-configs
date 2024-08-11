@@ -7,3 +7,4 @@ resources:
   - cert.yaml
   - cnpg-gatus.yaml
   - sealed-aws-creds.yaml
+  - sealed-gatus-env.yaml
