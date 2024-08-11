@@ -54,7 +54,7 @@ env:
     valueFrom:
       secretKeyRef:
         name: homepage-env
-        key: adguard_user
+        key: adguard_username
   HOMEPAGE_VAR_ADGUARD_PASSWORD:
     valueFrom:
       secretKeyRef:
