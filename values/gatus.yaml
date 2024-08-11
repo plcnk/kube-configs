@@ -172,10 +172,18 @@ config:
   storage:
     type: postgres
     path: ${PG_URI}?sslmode=disable
+  alerting:
+    discord:
+      webhook-url: ${DISCORD_WEBHOOK}
+  endpoint-defaults: &default
+    interval: 1m
+    client:
+      timeout: 10s
+      insecure: true
+    conditions:
+      - "[STATUS] == 200"
+      - "[CERTIFICATE_EXPIRATION] > 10d"
   endpoints:
-    - name: example
-      url: https://example.org
-      interval: 60s
-      conditions:
-        - "[STATUS] == 200"
-        - "[BODY] == pat(*<h1>Example Domain</h1>*)"
+    - name: Gitea
+      <<: *default
+      url: https://git.plcnk.home
