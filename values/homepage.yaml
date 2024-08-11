@@ -95,7 +95,7 @@ config:
               env: 2
               key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
         - Traefik:
-            icon: portainer.png
+            icon: traefik.png
             href: https://traefik.plcnk.net
             siteMonitor: https://traefik.plcnk.net
             description: Reverse Proxy
