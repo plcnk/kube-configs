@@ -248,6 +248,10 @@ config:
       <<: *default
       url: https://vault.plcnk.net
       group: 2. External Services
+    - name: API
+      <<: *default
+      url: https://api.plcnk.net
+      group: 2. External Services
 
     - name: Router
       <<: *default
