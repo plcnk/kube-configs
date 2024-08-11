@@ -16,7 +16,8 @@ livenessProbe:
 image:
   repository: twinproduction/gatus
   # Overrides the Gatus image tag whose default is the chart appVersion
-  tag: "v5.10.0"
+  # Temporarily switched to the experimental version to fix ICMP checking: https://github.com/TwiN/gatus/issues/697
+  tag: "experimental"
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -56,9 +57,6 @@ securityContext:
   runAsUser: 65534
   runAsGroup: 65534
   readOnlyRootFilesystem: true
-  sysctls:
-    - name: net.ipv4.ping_group_range
-      value: 0 65536
 
 # Expose the gatus service to be accessed from outside the cluster (LoadBalancer service)
 # or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
