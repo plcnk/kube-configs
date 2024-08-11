@@ -213,6 +213,17 @@ config:
     conditions:
       - "[STATUS] == 401"
       - "[CERTIFICATE_EXPIRATION] > 10d"
+  
+  endpoint-auth2: &auth2
+    interval: 1m
+    client:
+      timeout: 10s
+      insecure: true
+    alerts:
+      - type: discord
+    conditions:
+      - "[STATUS] == 403"
+      - "[CERTIFICATE_EXPIRATION] > 10d"
 
   endpoints:
     - name: DNS - External query
@@ -226,7 +237,6 @@ config:
         query-name: google.com
         query-type: A
       conditions:
-        - "[BODY] == 216.58.214.174"
         - "[DNS_RCODE] == NOERROR"
       group: 1. DNS
     - name: DNS - Internal query
@@ -249,7 +259,7 @@ config:
       url: https://vault.plcnk.net
       group: 2. External Services
     - name: API
-      <<: *default
+      <<: *auth2
       url: https://api.plcnk.net
       group: 2. External Services
 
