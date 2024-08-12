@@ -11,6 +11,7 @@ resources:
   - ./gitea
   - ./homepage
   - ./ingress-nginx
+  - ./it-tools
   - ./kube-vip
   - ./kured
   - ./metallb

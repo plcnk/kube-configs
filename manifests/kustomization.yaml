@@ -9,6 +9,7 @@ resources:
   - ./gatus
   - ./gitea
   - ./homepage
+  - ./it-tools
   - ./kured
   - ./longhorn
   - ./metallb
