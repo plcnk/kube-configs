@@ -70,23 +70,6 @@ env:
 config:
   # To use an existing ConfigMap uncomment this line and specify the name
   # useExistingConfigMap: existing-homepage-configmap
-  bookmarks:
-    - Bookmarks:
-        - GitHub:
-            - icon: github-light.png
-              href: https://github.com
-        - YouTube:
-            - icon: youtube.svg
-              href: https://youtube.com
-        - X:
-            - icon: x-light.png
-              href: https://x.com
-        - Reddit:
-            - icon: reddit.png
-              href: https://reddit.com
-        - Homepage:
-            - icon: homepage.png
-              href: https://gethomepage.dev
   services:
     - Infrastructure:
         - Adguard Home:
@@ -119,6 +102,23 @@ config:
               type: traefik
               url: https://traefik.plcnk.net
     - Services: []
+  bookmarks:
+    - Bookmarks:
+        - GitHub:
+            - icon: github-light.png
+              href: https://github.com
+        - YouTube:
+            - icon: youtube.svg
+              href: https://youtube.com
+        - X:
+            - icon: x-light.png
+              href: https://x.com
+        - Reddit:
+            - icon: reddit.png
+              href: https://reddit.com
+        - Homepage:
+            - icon: homepage.png
+              href: https://gethomepage.dev
   widgets:
     - search:
         provider: google
