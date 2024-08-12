@@ -269,6 +269,10 @@ config:
       <<: *auth2
       url: https://api.plcnk.net
       group: 2. External Services
+    - name: Charts
+      <<: *default
+      url: https://charts.plcnk.net
+      group: 2. External Services
 
     - name: Router
       <<: *default
@@ -349,4 +353,8 @@ config:
     - name: Unifi Controller
       <<: *default
       url: https://unifi.plcnk.home
+      group: 7. Kube Services
+    - name: IT-Tools
+      <<: *default
+      url: https://tools.plcnk.home
       group: 7. Kube Services
