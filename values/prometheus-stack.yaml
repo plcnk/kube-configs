@@ -1005,6 +1005,7 @@ grafana:
     annotations:
       gethomepage.dev/enabled: "true"
       gethomepage.dev/name: Grafana
+      gethomepage.dev/app: grafana
       gethomepage.dev/description: Monitoring Dashboards
       gethomepage.dev/group: Services
       gethomepage.dev/icon: grafana.png
