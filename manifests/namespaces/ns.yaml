@@ -43,6 +43,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: it-tools
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: metallb-system
 ---
 apiVersion: v1

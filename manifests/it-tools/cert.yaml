@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: it-tools-cert
+spec:
+  commonName: tools.plcnk.home
+  dnsNames:
+    - tools.plcnk.home
+  issuerRef:
+    kind: ClusterIssuer
+    name: home-issuer
+  secretName: it-tools-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - plcnk Home
+    provinces:
+      - Haute-Garonne
