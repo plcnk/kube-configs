@@ -38,7 +38,7 @@ affinity: {}
 image:
   repository: ghcr.io/corentinth/it-tools
   pullPolicy: IfNotPresent
-  tag: "v2024.5.13-a0bc346"
+  tag: "2024.5.13-a0bc346"
 
 ## @section Service account parameters
 ## @param serviceAccount.create Specifies whether a service account should be created
@@ -99,14 +99,14 @@ ingress:
     gethomepage.dev/href: https://tools.plcnk.home
     gethomepage.dev/siteMonitor: https://tools.plcnk.home
   hosts:
-    - host: it-tools.plcnk.home
+    - host: tools.plcnk.home
       paths:
         - path: /
           pathType: Prefix
   tls:
     - secretName: it-tools-tls
       hosts:
-        - it-tools.plcnk.home
+        - tools.plcnk.home
 
 ## @section Resources parameters
 ## @param resources Kubernetes resources
