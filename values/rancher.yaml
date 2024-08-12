@@ -65,6 +65,7 @@ ingress:
     gethomepage.dev/description: Kube Cluster mgmt
     gethomepage.dev/group: Services
     gethomepage.dev/icon: rancher.png
+    gethomepage.dev/pod-selector: ""
     gethomepage.dev/href: https://rancher.plcnk.home
     gethomepage.dev/siteMonitor: https://rancher.plcnk.home
   ingressClassName: "nginx"
