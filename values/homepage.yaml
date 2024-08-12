@@ -161,6 +161,10 @@ config:
         style: row
         columns: 6
         icon: mdi-card-multiple
+      Bookmarks:
+        style: row
+        columns: 5
+        icon: mdi-bookmark
 
 persistence:
   logs:
