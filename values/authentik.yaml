@@ -30,7 +30,13 @@ server:
     ingressClassName: nginx
     enabled: true
     annotations:
-      kubernetes.io/ingress.class: nginx
+      gethomepage.dev/enabled: "true"
+      gethomepage.dev/name: Authentik
+      gethomepage.dev/description: SSO Provider
+      gethomepage.dev/group: Services
+      gethomepage.dev/icon: authentik.png
+      gethomepage.dev/href: https://auth.plcnk.home
+      gethomepage.dev/siteMonitor: https://auth.plcnk.home
     hosts:
       - auth.plcnk.home
     paths:

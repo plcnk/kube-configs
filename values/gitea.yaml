@@ -166,7 +166,13 @@ ingress:
   enabled: true
   className: nginx
   annotations:
-    kubernetes.io/ingress.class: nginx
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/name: Gitea
+    gethomepage.dev/description: Local Git Repos
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: gitea.png
+    gethomepage.dev/href: https://git.plcnk.home
+    gethomepage.dev/siteMonitor: https://git.plcnk.home
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: git.plcnk.home

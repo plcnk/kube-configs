@@ -59,7 +59,14 @@ ingress:
   # options: true, false
   enabled: true
   includeDefaultExtraAnnotations: true
-  extraAnnotations: {}
+  extraAnnotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/name: Rancher
+    gethomepage.dev/description: Kube Cluster mgmt
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: rancher.png
+    gethomepage.dev/href: https://rancher.plcnk.home
+    gethomepage.dev/siteMonitor: https://rancher.plcnk.home
   ingressClassName: "nginx"
   # Certain ingress controllers will will require the pathType or path to be set to a different value.
   pathType: ImplementationSpecific

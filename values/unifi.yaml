@@ -38,7 +38,13 @@ ingress:
   enabled: true
   className: "nginx"
   annotations:
-    kubernetes.io/ingress.class: nginx
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/name: Unifi
+    gethomepage.dev/description: Unifi Devices mgmt
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: unifi.png
+    gethomepage.dev/href: https://unifi.plcnk.home
+    gethomepage.dev/siteMonitor: https://unifi.plcnk.home
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
   hosts:
     - host: unifi.plcnk.home
