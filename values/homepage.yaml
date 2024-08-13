@@ -104,21 +104,18 @@ config:
     - Services: []
   bookmarks:
     - Bookmarks:
-        - GitHub:
+        - Kube Configs:
             - icon: github-light.png
-              href: https://github.com
-        - YouTube:
-            - icon: youtube.svg
-              href: https://youtube.com
-        - X:
-            - icon: x-light.png
-              href: https://x.com
-        - Reddit:
-            - icon: reddit.png
-              href: https://reddit.com
+              href: https://github.com/plcnk/kube-configs
+              description: My Kubernetes configs
+        - Helm Charts:
+            - icon: github-light.png
+              href: https://github.com/plcnk/charts
+              description: My Helm charts
         - Homepage:
             - icon: homepage.png
               href: https://gethomepage.dev
+              description: Homepage docs
   widgets:
     - search:
         provider: google
@@ -165,6 +162,7 @@ config:
         style: row
         columns: 5
         icon: mdi-bookmark
+        initiallyCollapsed: true
 
 persistence:
   logs:
