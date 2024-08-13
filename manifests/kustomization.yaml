@@ -16,4 +16,5 @@ resources:
   - ./namespaces
   - ./prometheus-stack
   - ./rancher
+  - ./test
   - ./unifi

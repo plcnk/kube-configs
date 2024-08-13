@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: test-cert
+spec:
+  commonName: test.plcnk.home
+  dnsNames:
+    - test.plcnk.home
+  issuerRef:
+    kind: ClusterIssuer
+    name: home-issuer
+  secretName: test-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - plcnk Home
+    provinces:
+      - Haute-Garonne
