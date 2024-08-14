@@ -1,8 +1,20 @@
+<p align="center">
+    <img width="200px" height=auto src="https://k3s.io/img/k3s-logo-dark.svg" />
+</p>
+
+<p align="center">
+    <a href="https://k3s.io"><img src="https://img.shields.io/badge/k3s-v1.29.6-orange" /></a>
+    <a href="https://github.com/plcnk/kube-configs/pulls"><img src="https://img.shields.io/github/issues-pr/plcnk/kube-configs" /></a>
+    <a href="https://github.com/plcnk/kube-configs/commits/master"><img src="https://img.shields.io/github/last-commit/plcnk/kube-configs?color=purple" /></a>
+</p>
+
 # Kubernetes Configs
 
-Config / Manifest files in my Kubernetes cluster.
+This repo contains all the configuration files / manifests inside of my k3s cluster.
 
-Current services:
+The cluster is managed by Flux for manifests and Argo CD for Helm Charts.
+
+## List of services:
 
 * Infra:
   * [Longhorn](https://longhorn.io/)
@@ -19,7 +31,7 @@ Current services:
   * [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
   * [Flux](https://fluxcd.io/)
   * [Gitea](https://docs.gitea.com/)
-* Services:
+* Other Services:
   * [Homepage](https://gethomepage.dev/latest/)
   * [Prometheus Stack](https://github.com/prometheus-operator/kube-prometheus)
   * [Unifi Controller](https://github.com/Qonstrukt/helm-charts/tree/main/charts/unifi-controller) (Obsolete image)
