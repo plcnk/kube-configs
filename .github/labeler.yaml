@@ -1,0 +1,13 @@
+---
+area/ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**/*"
+area/argocd-apps:
+  - changed-files:
+      - any-glob-to-any-file: "argocd-apps/**/*"
+area/manifests:
+  - changed-files:
+      - any-glob-to-any-file: "manifests/**/*"
+area/helm-values:
+  - changed-files:
+      - any-glob-to-any-file: "values/**/*"

@@ -1,0 +1,26 @@
+---
+name: Label PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  labeler:
+    name: Labeler
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    steps:
+      - name: Generate Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.PLCNK_APP_ID }}
+          private-key: ${{ secrets.PLCNK_APP_PRIVATE_KEY }}
+
+      - name: Labeler
+        uses: actions/labeler@v5
+        with:
+          repo-token: "${{ steps.app-token.outputs.token }}"
+          configuration-path: .github/labeler.yaml
