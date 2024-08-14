@@ -200,11 +200,10 @@ config:
       - "[STATUS] == 200"
       - "[CERTIFICATE_EXPIRATION] > 10d"
 
-  endpoint-icmp: &icmp
+  endpoint-connect: &connect
     interval: 1m
     client:
       timeout: 10s
-      dns-resolver: "tcp://10.0.1.3:53"
     alerts:
       - type: discord
     conditions:
@@ -287,11 +286,11 @@ config:
       url: https://sw2.plcnk.net
       group: 3. Home Infra
     - name: Unifi AP
-      <<: *icmp
+      <<: *connect
       url: icmp://unifi-ap-1.plcnk.net
       group: 3. Home Infra
     - name: Raspberry Pi
-      <<: *icmp
+      <<: *connect
       url: icmp://raspi.plcnk.net
       group: 3. Home Infra
 
@@ -309,19 +308,19 @@ config:
       group: 4. Docker Services
 
     - name: VIP
-      <<: *icmp
+      <<: *connect
       url: icmp://k3s.plcnk.home
       group: 5. Kube Nodes
     - name: k3s-01
-      <<: *icmp
+      <<: *connect
       url: icmp://k3s-01.plcnk.home
       group: 5. Kube Nodes
     - name: k3s-02
-      <<: *icmp
+      <<: *connect
       url: icmp://k3s-02.plcnk.home
       group: 5. Kube Nodes
     - name: k3s-03
-      <<: *icmp
+      <<: *connect
       url: icmp://k3s-03.plcnk.home
       group: 5. Kube Nodes
 
@@ -338,23 +337,36 @@ config:
       url: https://argocd.plcnk.home
       group: 6. Kube Infra
 
+    - name: Postgres Authentik
+      <<: *connect
+      url: tcp://cnpg-authentik-rw.authentik.svc.cluster.local:5432
+      group: 7. Databases
+    - name: Postgres Gatus
+      <<: *connect
+      url: tcp://cnpg-gatus-rw.monitoring.svc.cluster.local:5432
+      group: 7. Databases
+    - name: Postgres Gitea
+      <<: *connect
+      url: tcp://cnpg-gitea-rw.gitea.svc.cluster.local:5432
+      group: 7. Databases
+
     - name: Gitea
       <<: *default
       url: https://git.plcnk.home
-      group: 7. Kube Services
+      group: 8. Kube Services
     - name: Homepage
       <<: *default
       url: https://dash.plcnk.home
-      group: 7. Kube Services
+      group: 8. Kube Services
     - name: Grafana
       <<: *default
       url: https://grafana.plcnk.home
-      group: 7. Kube Services
+      group: 8. Kube Services
     - name: Unifi Controller
       <<: *default
       url: https://unifi.plcnk.home
-      group: 7. Kube Services
+      group: 8. Kube Services
     - name: IT-Tools
       <<: *default
       url: https://tools.plcnk.home
-      group: 7. Kube Services
+      group: 8. Kube Services
