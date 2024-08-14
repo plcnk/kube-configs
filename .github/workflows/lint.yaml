@@ -44,7 +44,6 @@ jobs:
                     "JSON_ESLINT_PLUGIN_JSONC",
                     "MARKDOWN_MARKDOWNLINT",
                     "REPOSITORY_GIT_DIFF",
-                    "REPOSITORY_SECRETLINT",
                     "YAML_YAMLLINT"
                   ]
                 '),
