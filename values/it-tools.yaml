@@ -80,7 +80,14 @@ ingress:
   main:
     enabled: true
     className: "nginx"
-    annotations: {}
+    annotations:
+      gethomepage.dev/enabled: "true"
+      gethomepage.dev/name: IT-Tools
+      gethomepage.dev/description: Various tools for IT
+      gethomepage.dev/group: Services
+      gethomepage.dev/icon: it-tools-light.png
+      gethomepage.dev/href: https://tools.plcnk.home
+      gethomepage.dev/siteMonitor: https://tools.plcnk.home
     hosts:
       - host: &host-main "tools.plcnk.home"
         paths:
