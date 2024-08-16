@@ -18,26 +18,36 @@ jobs:
     container: pandoc/latex
     steps:
       - uses: actions/checkout@v4
+
+      - name: Generate Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.PLCNK_APP_ID }}
+          private-key: ${{ secrets.PLCNK_APP_PRIVATE_KEY }}
+
       - name: Copy Manifests to Flux Repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          API_TOKEN_GITHUB: ${{ steps.app-token.outputs.token }}
         with:
           source-directory: 'manifests'
           destination-github-username: 'plcnk'
           destination-repository-name: 'flux-system'
           target-directory: 'k3s/manifests'
-          user-email: 'romain.pluciennik@gmail.com'
+          user-name: plcnk-bot
+          user-email: '178334506+plcnk-bot[bot]@users.noreply.github.com'
           target-branch: master
 
       - name: Copy Argo CD manifests to Flux Repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          API_TOKEN_GITHUB: ${{ steps.app-token.outputs.token }}
         with:
           source-directory: 'argocd-apps'
           destination-github-username: 'plcnk'
           destination-repository-name: 'flux-system'
           target-directory: 'k3s/argocd-apps'
-          user-email: 'romain.pluciennik@gmail.com'
+          user-name: plcnk-bot
+          user-email: '178334506+plcnk-bot[bot]@users.noreply.github.com'
           target-branch: master

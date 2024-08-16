@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: test
 resources:
   - cert.yaml
+  - cm.yaml
