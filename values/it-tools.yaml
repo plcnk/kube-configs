@@ -82,7 +82,7 @@ ingress:
     className: "nginx"
     annotations: {}
     hosts:
-      - host: &host-main "tools.plcnk.net"
+      - host: &host-main "tools.plcnk.home"
         paths:
           - path: /
             pathType: Prefix
