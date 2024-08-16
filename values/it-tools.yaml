@@ -10,6 +10,8 @@ controllers:
   main:
     # -- Controller type
     type: deployment
+    # -- Number of desired pods
+    replicas: 1
     containers:
       app:
         image:
@@ -62,7 +64,7 @@ service:
     controller: main
     ports:
       http:
-        port: 80
+        port: 8080
 
 # -- Configure persistence for the chart under this key.
 # @default -- See [values.yaml](./values.yaml)
