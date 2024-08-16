@@ -11,7 +11,7 @@ controllers:
     # -- Controller type
     type: deployment
     # -- Number of desired pods
-    replicas: 2
+    replicas: 1
     containers:
       app:
         image:
