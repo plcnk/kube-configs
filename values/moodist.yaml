@@ -87,7 +87,7 @@ ingress:
       gethomepage.dev/name: Moodist
       gethomepage.dev/description: Ambient sounds for focus and calm.
       gethomepage.dev/group: Services
-      gethomepage.dev/abbr: MO
+      gethomepage.dev/icon: https://raw.githubusercontent.com/plcnk/charts/master/charts/moodist/icon.svg
       gethomepage.dev/href: https://moodist.plcnk.home
       gethomepage.dev/siteMonitor: https://moodist.plcnk.home
     hosts:

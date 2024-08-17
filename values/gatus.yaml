@@ -370,3 +370,7 @@ config:
       <<: *default
       url: https://tools.plcnk.home
       group: 8. Kube Services
+    - name: Moodist
+      <<: *default
+      url: https://moodist.plcnk.home
+      group: 8. Kube Services
