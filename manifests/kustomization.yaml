@@ -13,6 +13,7 @@ resources:
   - ./kured
   - ./longhorn
   - ./metallb
+  - ./moodist
   - ./namespaces
   - ./prometheus-stack
   - ./rancher

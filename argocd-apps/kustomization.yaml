@@ -15,6 +15,7 @@ resources:
   - ./kube-vip
   - ./kured
   - ./metallb
+  - ./moodist
   - ./prometheus-stack
   - ./rancher
   - ./sealed-secrets

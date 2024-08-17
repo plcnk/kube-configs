@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: moodist-cert
+spec:
+  commonName: moodist.plcnk.home
+  dnsNames:
+    - moodist.plcnk.home
+  issuerRef:
+    kind: ClusterIssuer
+    name: home-issuer
+  secretName: moodist-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - plcnk Home
+    provinces:
+      - Haute-Garonne
