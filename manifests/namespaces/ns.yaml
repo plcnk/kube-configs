@@ -60,6 +60,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: moodist
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: cattle-system
 ---
 apiVersion: v1
