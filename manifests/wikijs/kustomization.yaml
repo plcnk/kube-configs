@@ -6,4 +6,5 @@ resources:
   - backup-cnpg.yaml
   - cert.yaml
   - cnpg-wikijs.yaml
+  - plcnk-ca.yaml
   - sealed-aws-creds.yaml
