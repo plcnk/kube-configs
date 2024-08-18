@@ -374,3 +374,7 @@ config:
       <<: *default
       url: https://moodist.plcnk.home
       group: 8. Kube Services
+    - name: Wiki.js
+      <<: *default
+      url: https://wiki.plcnk.home
+      group: 8. Kube Services

@@ -1,0 +1,11 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: backup-cnpg-wikijs
+spec:
+  immediate: true
+  schedule: "0 0 4 * * *"
+  backupOwnerReference: self
+  cluster:
+    name: cnpg-wikijs

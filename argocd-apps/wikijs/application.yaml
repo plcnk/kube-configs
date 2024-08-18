@@ -1,0 +1,22 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wikijs
+spec:
+  destination:
+    namespace: wikijs
+    server: https://kubernetes.default.svc
+  sources:
+    # Chart from chart repo
+    - repoURL: https://charts.plcnk.net
+      chart: wikijs
+      targetRevision: 0.1.0
+      helm:
+        valueFiles:
+          - $values/values/wikijs.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/kube-configs
+      targetRevision: HEAD
+      ref: values
+  project: default

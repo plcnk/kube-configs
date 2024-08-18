@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wikijs-cert
+spec:
+  commonName: wiki.plcnk.home
+  dnsNames:
+    - wiki.plcnk.home
+  issuerRef:
+    kind: ClusterIssuer
+    name: home-issuer
+  secretName: wikijs-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - plcnk Home
+    provinces:
+      - Haute-Garonne
