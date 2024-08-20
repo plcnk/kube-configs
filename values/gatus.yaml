@@ -349,6 +349,10 @@ config:
       <<: *connect
       url: tcp://cnpg-gitea-rw.gitea.svc.cluster.local:5432
       group: 7. Databases
+    - name: Postgres Wiki.js
+      <<: *connect
+      url: tcp://cnpg-wikijs-rw.wikijs.svc.cluster.local:5432
+      group: 7. Databases
 
     - name: Gitea
       <<: *default
