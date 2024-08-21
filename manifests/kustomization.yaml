@@ -5,6 +5,7 @@ resources:
   - ./argocd
   - ./authentik
   - ./cert-manager
+  - ./cloudflared
   - ./flux
   - ./gatus
   - ./gitea
