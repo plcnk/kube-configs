@@ -83,3 +83,8 @@ metadata:
   name: wikijs
   labels:
     prometheus-scrape: "true"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudflared
