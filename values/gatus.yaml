@@ -188,6 +188,12 @@ config:
         send-on-resolved: true
         failure-threshold: 2
         success-threshold: 2
+    discord-extended:
+      webhook-url: ${DISCORD_WEBHOOK}
+      default-alert:
+        send-on-resolved: true
+        failure-threshold: 4
+        success-threshold: 2
 
   endpoint-defaults: &default
     interval: 1m
@@ -238,7 +244,7 @@ config:
       client:
         timeout: 10s
       alerts:
-        - type: discord
+        - type: discord-extended
       dns:
         query-name: google.com
         query-type: A
@@ -251,7 +257,7 @@ config:
       client:
         timeout: 10s
       alerts:
-        - type: discord
+        - type: discord-extended
       dns:
         query-name: k3s.plcnk.home
         query-type: A
