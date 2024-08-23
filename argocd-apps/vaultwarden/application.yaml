@@ -1,0 +1,22 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vaultwarden
+spec:
+  destination:
+    namespace: vaultwarden
+    server: https://kubernetes.default.svc
+  sources:
+    # Chart from chart repo
+    - repoURL: https://charts.gabe565.com
+      chart: vaultwarden
+      targetRevision: 0.14.0
+      helm:
+        valueFiles:
+          - $values/values/vaultwarden.yaml
+    # Values from git
+    - repoURL: https://github.com/plcnk/kube-configs
+      targetRevision: HEAD
+      ref: values
+  project: default
