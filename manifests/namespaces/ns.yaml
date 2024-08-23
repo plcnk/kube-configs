@@ -89,7 +89,7 @@ kind: Namespace
 metadata:
   name: cloudflared
 ---
-apiVersion: 1
+apiVersion: v1
 kind: Namespace
 metadata:
   name: vaultwarden
