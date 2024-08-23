@@ -48,6 +48,14 @@ ingress:
   main:
     enabled: true
     ingressClassName: "nginx"
+    annotations:
+      gethomepage.dev/enabled: "true"
+      gethomepage.dev/name: Vaultwarden
+      gethomepage.dev/description: Password manager
+      gethomepage.dev/group: Services
+      gethomepage.dev/icon: vaultwarden.png
+      gethomepage.dev/href: https://vault-ng.plcnk.net
+      gethomepage.dev/siteMonitor: https://vault-ng.plcnk.net
     hosts:
       - host: vault.plcnk.home
         paths:

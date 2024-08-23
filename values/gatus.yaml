@@ -270,6 +270,10 @@ config:
       <<: *default
       url: https://vault.plcnk.net
       group: 2. External Services
+    - name: Vaultwarden NG
+      <<: *default
+      url: https://vault-ng.plcnk.net
+      group: 2. External Services
     - name: API
       <<: *auth2
       url: https://api.plcnk.net
@@ -359,6 +363,10 @@ config:
       <<: *connect
       url: tcp://cnpg-wikijs-rw.wikijs.svc.cluster.local:5432
       group: 7. Databases
+    - name: Postgres Vaultwarden
+      <<: *connect
+      url: tcp://cnpg-vaultwarden-rw.vaultwarden.svc.cluster.local:5432
+      group: 7. Databases
 
     - name: Gitea
       <<: *default
@@ -387,4 +395,8 @@ config:
     - name: Wiki.js
       <<: *default
       url: https://wiki.plcnk.home
+      group: 8. Kube Services
+    - name: Vaultwarden Internal
+      <<: *default
+      url: https://vault.plcnk.home
       group: 8. Kube Services
