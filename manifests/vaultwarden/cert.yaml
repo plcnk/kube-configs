@@ -1,0 +1,22 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vaultwarden-cert
+spec:
+  commonName: vault.plcnk.home
+  dnsNames:
+    - vault.plcnk.home
+  issuerRef:
+    kind: ClusterIssuer
+    name: home-issuer
+  secretName: vaultwarden-tls
+  subject:
+    countries:
+      - FR
+    localities:
+      - Toulouse
+    organizations:
+      - plcnk Home
+    provinces:
+      - Haute-Garonne
