@@ -20,4 +20,5 @@ resources:
   - ./rancher
   - ./test
   - ./unifi
+  - ./vaultwarden
   - ./wikijs
