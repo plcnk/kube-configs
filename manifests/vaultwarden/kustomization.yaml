@@ -6,5 +6,4 @@ resources:
   - backup-cnpg.yaml
   - cert.yaml
   - cnpg-vaultwarden.yaml
-  - plcnk-ca.yaml
   - sealed-aws-creds.yaml
