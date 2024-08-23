@@ -53,7 +53,7 @@ ingress:
       gethomepage.dev/name: Vaultwarden
       gethomepage.dev/description: Password manager
       gethomepage.dev/group: Services
-      gethomepage.dev/icon: vaultwarden.png
+      gethomepage.dev/icon: vaultwarden-light.png
       gethomepage.dev/href: https://vault-ng.plcnk.net
       gethomepage.dev/siteMonitor: https://vault-ng.plcnk.net
     hosts:
