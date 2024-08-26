@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <a href="https://k3s.io"><img src="https://img.shields.io/badge/k3s-v1.29.6-orange" /></a>
+    <a href="https://k3s.io"><img src="https://img.shields.io/badge/k3s-v1.29.7-orange" /></a>
     <a href="https://github.com/plcnk/kube-configs/pulls"><img src="https://img.shields.io/github/issues-pr/plcnk/kube-configs" /></a>
     <a href="https://github.com/plcnk/kube-configs/commits/master"><img src="https://img.shields.io/github/last-commit/plcnk/kube-configs?color=purple" /></a>
 </p>
