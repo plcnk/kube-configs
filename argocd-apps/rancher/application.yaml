@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: https://releases.rancher.com/server-charts/latest
       chart: rancher
-      targetRevision: 2.9.0
+      targetRevision: 2.9.1
       helm:
         valueFiles:
           - $values/values/rancher.yaml
