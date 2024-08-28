@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>plcnk/.github:default.json5",
-    "github>plcnk/kube-configs//.github/renovate/automerge-patch.json5",
     ":semanticCommitTypeAll(chore)"
   ],
 
