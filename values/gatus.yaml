@@ -316,10 +316,10 @@ config:
       url: https://traefik.plcnk.net
       group: 4. Docker Services
 
-    - name: VIP
-      <<: *connect
-      url: tcp://k3s.plcnk.home:6443
-      group: 5. Kube Nodes
+    # - name: VIP
+    #   <<: *connect
+    #   url: tcp://k3s.plcnk.home:6443
+    #   group: 5. Kube Nodes
     - name: k3s-01
       <<: *connect
       url: tcp://k3s-01.plcnk.home:6443
