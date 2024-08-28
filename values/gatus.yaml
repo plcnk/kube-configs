@@ -14,10 +14,9 @@ livenessProbe:
   enabled: true
 
 image:
-  repository: twinproduction/gatus
+  repository: ghcr.io/twin/gatus
   # Overrides the Gatus image tag whose default is the chart appVersion
-  # Temporarily switched to the experimental version to fix ICMP checking: https://github.com/TwiN/gatus/issues/697
-  tag: "experimental"
+  tag: "v5.11.0"
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -297,11 +296,11 @@ config:
       group: 3. Home Infra
     - name: Unifi AP
       <<: *connect
-      url: icmp://unifi-ap-1.plcnk.net
+      url: tcp://unifi-ap-1.plcnk.net:22
       group: 3. Home Infra
     - name: Raspberry Pi
       <<: *connect
-      url: icmp://raspi.plcnk.net
+      url: tcp://raspi.plcnk.net:22
       group: 3. Home Infra
 
     - name: Adguard Home
@@ -319,19 +318,19 @@ config:
 
     - name: VIP
       <<: *connect
-      url: icmp://k3s.plcnk.home
+      url: tcp://k3s.plcnk.home:6443
       group: 5. Kube Nodes
     - name: k3s-01
       <<: *connect
-      url: icmp://k3s-01.plcnk.home
+      url: tcp://k3s-01.plcnk.home:6443
       group: 5. Kube Nodes
     - name: k3s-02
       <<: *connect
-      url: icmp://k3s-02.plcnk.home
+      url: tcp://k3s-02.plcnk.home:6443
       group: 5. Kube Nodes
     - name: k3s-03
       <<: *connect
-      url: icmp://k3s-03.plcnk.home
+      url: tcp://k3s-03.plcnk.home:6443
       group: 5. Kube Nodes
 
     - name: Authentik

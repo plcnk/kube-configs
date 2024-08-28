@@ -20,3 +20,5 @@ spec:
       targetRevision: HEAD
       ref: values
   project: default
+  syncPolicy:
+    automated: {}
