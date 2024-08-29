@@ -269,10 +269,6 @@ config:
       <<: *default
       url: https://vault.plcnk.net
       group: 2. External Services
-    - name: Vaultwarden NG
-      <<: *default
-      url: https://vault-ng.plcnk.net
-      group: 2. External Services
     - name: API
       <<: *auth2
       url: https://api.plcnk.net
