@@ -16,7 +16,7 @@ image:
 
 controller:
   # -- Set the controller upgrade strategy
-  strategy: RollingUpdate
+  strategy: Recreate
 
 # -- environment variables. [[ref]](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template)
 # @default -- See [values.yaml](./values.yaml)
