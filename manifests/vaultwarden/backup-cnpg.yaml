@@ -4,7 +4,7 @@ kind: ScheduledBackup
 metadata:
   name: backup-cnpg-vaultwarden
 spec:
-  immediate: true
+  immediate: false
   schedule: "0 0 5 * * *"
   backupOwnerReference: self
   cluster:

@@ -4,7 +4,7 @@ kind: ScheduledBackup
 metadata:
   name: backup-cnpg-gitea
 spec:
-  immediate: true
+  immediate: false
   schedule: "0 0 2 * * *"
   backupOwnerReference: self
   cluster:

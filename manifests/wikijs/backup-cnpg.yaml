@@ -4,7 +4,7 @@ kind: ScheduledBackup
 metadata:
   name: backup-cnpg-wikijs
 spec:
-  immediate: true
+  immediate: false
   schedule: "0 0 4 * * *"
   backupOwnerReference: self
   cluster:
