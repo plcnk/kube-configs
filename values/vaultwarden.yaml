@@ -26,6 +26,7 @@ env:
   #    [[ref]](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page#secure-the-admin_token)
   # ADMIN_TOKEN: ""
   SIGNUPS_ALLOWED: false
+  DOMAIN: https://vault.plcnk.net
   DATABASE_URL:
     secretKeyRef:
       name: cnpg-vaultwarden-app
@@ -54,8 +55,8 @@ ingress:
       gethomepage.dev/description: Password manager
       gethomepage.dev/group: Services
       gethomepage.dev/icon: vaultwarden-light.png
-      gethomepage.dev/href: https://vault-ng.plcnk.net
-      gethomepage.dev/siteMonitor: https://vault-ng.plcnk.net
+      gethomepage.dev/href: https://vault.plcnk.net
+      gethomepage.dev/siteMonitor: https://vault.plcnk.net
     hosts:
       - host: vault.plcnk.home
         paths:
