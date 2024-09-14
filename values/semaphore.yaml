@@ -75,7 +75,7 @@ ingress:
   enabled: true
 
   # -- (string) Class name for the ingress resource
-  className:
+  className: nginx
 
   # -- Host definition for ingress
   hosts:
@@ -91,7 +91,14 @@ ingress:
         - semaphore.plcnk.home
 
   # -- Additional annotations for the ingress
-  annotations: {}
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/name: Semaphore
+    gethomepage.dev/description: Ansible playbooks
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: semaphore.png
+    gethomepage.dev/href: https://semaphore.plcnk.home
+    gethomepage.dev/siteMonitor: https://semaphore.plcnk.home
 
   # -- Additional labels for the ingress
   labels: {}
