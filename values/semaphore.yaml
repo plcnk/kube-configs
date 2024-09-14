@@ -144,7 +144,7 @@ secrets:
 
 general:
   # -- Host to access Semaphore
-  host: semaphore.plcnk.home
+  host: https://semaphore.plcnk.home
 
   # -- Use Git client implementation
   gitClient: cmd_git
