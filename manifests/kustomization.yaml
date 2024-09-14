@@ -18,6 +18,7 @@ resources:
   - ./namespaces
   - ./prometheus-stack
   - ./rancher
+  - ./semaphore
   - ./test
   - ./unifi
   - ./vaultwarden

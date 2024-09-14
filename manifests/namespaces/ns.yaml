@@ -95,3 +95,10 @@ metadata:
   name: vaultwarden
   labels:
     prometheus-scrape: "true"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: semaphore
+  labels:
+    prometheus-scrape: "true"
