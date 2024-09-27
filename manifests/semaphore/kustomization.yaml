@@ -6,6 +6,8 @@ resources:
   - backup-cnpg.yaml
   - cert.yaml
   - cnpg-semaphore.yaml
+  - plcnk-ca.yaml
   - sealed-aws-creds.yaml
+  - sealed-oidc-tokens.yaml
   - sealed-semaphore-general.yaml
   - sealed-semaphore-runner.yaml
