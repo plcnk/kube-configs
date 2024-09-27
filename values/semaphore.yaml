@@ -54,6 +54,26 @@ extraInitContainers: []
 # -- List of extra sidecar containers
 extraSidecarContainers: []
 
+# -- List of extra volumes
+extraVolumes:
+  - name: oidc-mount
+    secret:
+      secretName: oidc-tokens
+  - name: plcnk-ca
+    configMap:
+      defaultMode: 420
+      name: plcnk-ca
+
+# -- List of extra volume mounts
+extraVolumeMounts:
+  - name: oidc-mount
+    mountPath: /etc/secrets/oidc
+    readOnly: true
+  - name: plcnk-ca
+    mountPath: /etc/ssl/certs/plcnk-root.crt
+    readOnly: true
+    subPath: plcnk-root.crt
+
 service:
   # -- Type of the service
   type: ClusterIP
@@ -226,10 +246,19 @@ database:
 
 oidc:
   # -- Enable oidc authentication
-  enable: false
+  enable: true
 
   # -- Dictionary of oidc providers
-  providers: {}
+  providers:
+    authentik:
+      display_name: "Sign in with Authentik"
+      provider_url: "https://auth.plcnk.home/application/o/semaphore/"
+      client_id_file: "/etc/secrets/oidc/client_id"
+      client_secret_file: "/etc/secrets/oidc/client_secret"
+      redirect_url: "https://semaphore.plcnk.home/api/auth/oidc/authentik/redirect/"
+      scopes: ["email", "openid", "profile"]
+      username_claim: "preferred_username"
+      name_claim: "preferred_username"
 
 telegram:
   # -- Enable telegram alerting
