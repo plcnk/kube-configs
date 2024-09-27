@@ -316,7 +316,8 @@ envFromSecrets: []
 envFromConfigMaps: []
 
 # -- Extra environment variables from mapping
-extraEnvVariables: {}
+extraEnvVariables:
+  GIT_SSL_NO_VERIFY: "true"
 
 # -- Extra environment variables from secrets
 extraEnvSecrets: {}
