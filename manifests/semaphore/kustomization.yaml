@@ -7,3 +7,5 @@ resources:
   - cert.yaml
   - cnpg-semaphore.yaml
   - sealed-aws-creds.yaml
+  - sealed-semaphore-general.yaml
+  - sealed-semaphore-runner.yaml

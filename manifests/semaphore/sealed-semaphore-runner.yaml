@@ -1,0 +1,11 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: semaphore-runner
+spec:
+  encryptedData:
+    token: AgAWgGkGHvGpl3spGSLAtKG7N3yEFPnsISTczLQ9aco15NhmgVvoL0amvU0sOgfOCbujVacfX7zSDgUyvs0WInD2SSKYXdBx8BLQkpjQqiU+QstiV+OEE3bTgHOaXfcbUTjoxZzGaFQ+2YjSVzckUjIm+Mg4ehhxx8240yroXiSzC2l1nRkw/PzCXSxWgbjR/WdCTBGBZUiJWxRHd4yh/pWETsyonjS528mnsMOsGNOr1n//fHh1jKm9Aru9QFBKUuLIgxG6aqgpdlsX5omG544OIRBuNiImPgg9SB5bmvebH6ZB3Yck2VwQD3FdONwlvnEMi3X0Dnq4Hz2MqK8P95CWfnSF2WLirp9RsSY5gXS19Qfrs+Qyut50wTBx6HWSz3gpXjOg9KdF8K3YHVX4WdjyJh0csI1xDaDW9hjfrbwtLvzJMcBRkIo6qJX2VmVjKQHcOoylSNpfyvmjPS5yIDsr2QMGkjOvcUhg2f/LD7cF161GRzAsvj8U+RCHh5vdMnL1Mr2GbHKf8spQPC6pwShtSc1qDudwzJxV+nT5MmaChB7HuY2ksC1DlnWNlZRPNwbAR6rNS1QoeXXMAep97Af46Q70PIrwTJVcUgzd4m295+LfJU0RO1hj/yz/p0VcRAFJj36R9arC97+mU8Gr7rwX4T+RzUgp73Yu4iYRBJ1DgQM/HRoQKvtsv9p17ERmjFQ4ZHqkmWEjh0HUL2P9jGWX52wcHrB2uCr9J0CBuOfH7w==
+  template:
+    metadata:
+      name: semaphore-runner

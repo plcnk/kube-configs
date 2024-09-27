@@ -140,7 +140,7 @@ secrets:
   accesskeyEncryptionKey: accesskeyEncryption
 
   # -- Existing secret to use for secrets
-  existingSecret:
+  existingSecret: semaphore-general
 
 general:
   # -- Host to access Semaphore
@@ -258,7 +258,7 @@ runner:
   tokenKey: token
 
   # -- Existing secret to use for runner
-  existingSecret:
+  existingSecret: semaphore-runner
 
 billing:
   # -- Enable billing
