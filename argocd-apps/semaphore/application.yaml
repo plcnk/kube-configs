@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: https://cloudhippie.github.io/charts
       chart: ansible-semaphore
-      targetRevision: 11.2.2
+      targetRevision: 11.2.3
       helm:
         valueFiles:
           - $values/values/semaphore.yaml
