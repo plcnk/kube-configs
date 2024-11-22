@@ -13,7 +13,7 @@ image:
   repository: semaphoreui/semaphore
 
   # -- Optional tag for the repository, defaults to app version
-  tag: "v2.10.35"
+  tag: "v2.10.43"
 
   # -- Image pull policy
   pullPolicy: IfNotPresent
