@@ -14,7 +14,7 @@ This repo contains all the configuration files / manifests inside of my k3s clus
 
 The cluster is managed by Flux for manifests and Argo CD for Helm Charts.
 
-## List of services:
+## List of services
 
 * Infra:
   * [Longhorn](https://longhorn.io/)
@@ -30,7 +30,6 @@ The cluster is managed by Flux for manifests and Argo CD for Helm Charts.
 * DevOps:
   * [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
   * [Flux](https://fluxcd.io/)
-  * [Gitea](https://docs.gitea.com/)
 * Other Services:
   * [Homepage](https://gethomepage.dev/latest/)
   * [Prometheus Stack](https://github.com/prometheus-operator/kube-prometheus)

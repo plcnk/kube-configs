@@ -9,7 +9,6 @@ resources:
   - ./cloudflared
   - ./cnpg
   - ./gatus
-  - ./gitea
   - ./homepage
   - ./ingress-nginx
   - ./it-tools
