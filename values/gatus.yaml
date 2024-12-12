@@ -350,10 +350,6 @@ config:
       <<: *connect
       url: tcp://cnpg-gatus-rw.monitoring.svc.cluster.local:5432
       group: 7. Databases
-    - name: Postgres Gitea
-      <<: *connect
-      url: tcp://cnpg-gitea-rw.gitea.svc.cluster.local:5432
-      group: 7. Databases
     - name: Postgres Wiki.js
       <<: *connect
       url: tcp://cnpg-wikijs-rw.wikijs.svc.cluster.local:5432
@@ -363,10 +359,6 @@ config:
       url: tcp://cnpg-vaultwarden-rw.vaultwarden.svc.cluster.local:5432
       group: 7. Databases
 
-    - name: Gitea
-      <<: *default
-      url: https://git.plcnk.home
-      group: 8. Kube Services
     - name: Homepage
       <<: *default
       url: https://dash.plcnk.home
