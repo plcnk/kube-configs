@@ -8,7 +8,6 @@ resources:
   - ./cloudflared
   - ./flux
   - ./gatus
-  - ./gitea
   - ./homepage
   - ./it-tools
   - ./kured

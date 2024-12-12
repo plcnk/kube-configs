@@ -30,7 +30,6 @@ The cluster is managed by Flux for manifests and Argo CD for Helm Charts.
 * DevOps:
   * [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
   * [Flux](https://fluxcd.io/)
-  * [Gitea](https://docs.gitea.com/)
 * Other Services:
   * [Homepage](https://gethomepage.dev/latest/)
   * [Prometheus Stack](https://github.com/prometheus-operator/kube-prometheus)
