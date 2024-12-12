@@ -14,7 +14,7 @@ This repo contains all the configuration files / manifests inside of my k3s clus
 
 The cluster is managed by Flux for manifests and Argo CD for Helm Charts.
 
-## List of services:
+## List of services
 
 * Infra:
   * [Longhorn](https://longhorn.io/)
