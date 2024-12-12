@@ -362,10 +362,6 @@ config:
       <<: *connect
       url: tcp://cnpg-vaultwarden-rw.vaultwarden.svc.cluster.local:5432
       group: 7. Databases
-    - name: Postgres Semaphore
-      <<: *connect
-      url: tcp://cnpg-semaphore-rw.semaphore.svc.cluster.local:5432
-      group: 7. Databases
 
     - name: Gitea
       <<: *default
@@ -398,8 +394,4 @@ config:
     - name: Vaultwarden Internal
       <<: *default
       url: https://vault.plcnk.home
-      group: 8. Kube Services
-    - name: Semaphore
-      <<: *default
-      url: https://semaphore.plcnk.home
       group: 8. Kube Services
