@@ -957,7 +957,7 @@ grafana:
   image:
     registry: docker.io
     repository: grafana/grafana
-    tag: "11.4.0"
+    tag: "11.5.0"
     sha: ""
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
