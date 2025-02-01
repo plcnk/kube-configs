@@ -2179,7 +2179,7 @@ server:
       gethomepage.dev/name: Argo CD
       gethomepage.dev/description: Kube CD
       gethomepage.dev/group: Services
-      gethomepage.dev/icon: argocd.png
+      gethomepage.dev/icon: argo-cd.png
       gethomepage.dev/href: https://argocd.plcnk.home
       gethomepage.dev/siteMonitor: https://argocd.plcnk.home
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
