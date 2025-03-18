@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: http://jameswynn.github.io/helm-charts
       chart: homepage
-      targetRevision: 2.0.1
+      targetRevision: 2.0.2
       helm:
         valueFiles:
           - $values/values/homepage.yaml
