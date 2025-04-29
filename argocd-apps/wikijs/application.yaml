@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: https://charts.plcnk.net
       chart: wikijs
-      targetRevision: 0.8.4
+      targetRevision: 0.8.5
       helm:
         valueFiles:
           - $values/values/wikijs.yaml
