@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: https://charts.plcnk.net
       chart: cloudflare-tunnel
-      targetRevision: 0.11.0
+      targetRevision: 0.11.1
       helm:
         valueFiles:
           - $values/values/cloudflared.yaml
