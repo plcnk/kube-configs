@@ -11,7 +11,7 @@ spec:
     # Chart from chart repo
     - repoURL: https://kube-vip.github.io/helm-charts
       chart: kube-vip
-      targetRevision: 0.6.6
+      targetRevision: 0.7.1
       helm:
         valueFiles:
           - $values/values/kube-vip.yaml
