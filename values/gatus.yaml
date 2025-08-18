@@ -16,7 +16,7 @@ livenessProbe:
 image:
   repository: ghcr.io/twin/gatus
   # Overrides the Gatus image tag whose default is the chart appVersion
-  tag: "v5.21.0"
+  tag: "v5.23.0"
   sha: ""
   pullPolicy: IfNotPresent
 
